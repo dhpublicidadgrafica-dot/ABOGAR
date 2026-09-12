@@ -1,0 +1,6 @@
+{
+  "name": "ABOGAR | Grupo Jurídico",
+  "description": "Sitio web corporativo y profesional para despacho de abogados, con catálogo de 12 áreas de práctica, equipo jurídico y sistema de consulta legal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

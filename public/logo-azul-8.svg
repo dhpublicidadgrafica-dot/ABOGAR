@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 270" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Plus+Jakarta+Sans:wght@500;600&amp;display=swap');
+      .logo-title {
+        font-family: 'Playfair Display', "Minion Variable Concept", "Minion Pro", Georgia, serif;
+        font-weight: 700;
+        font-size: 195px;
+        fill: #15297C;
+      }
+      .logo-sub {
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-weight: 500;
+        font-size: 42px;
+        fill: #15297C;
+      }
+      .logo-rule {
+        stroke: #15297C;
+        stroke-width: 3.5;
+        stroke-linecap: round;
+      }
+    </style>
+  </defs>
+
+  <!-- Letters A and B -->
+  <text x="28" y="195" class="logo-title" letter-spacing="1">AB</text>
+
+  <!-- Letter O with Gavel Emblem (Centered at X=385, Y=116) -->
+  <g id="letter-o-gavel">
+    <!-- Serif Oval Ring O -->
+    <path
+      fill="#15297C"
+      fill-rule="evenodd"
+      d="
+        M 385, 30
+        C 432, 30 466, 68 466, 116
+        C 466, 164 432, 202 385, 202
+        C 338, 202 304, 164 304, 116
+        C 304, 68 338, 30 385, 30 Z
+        M 385, 47
+        C 357, 47 334, 78 334, 116
+        C 334, 154 357, 185 385, 185
+        C 413, 185 436, 154 436, 116
+        C 436, 78 413, 47 385, 47 Z
+      "
+    />
+
+    <!-- Judge's Gavel (oriented 45 deg, handle pointing down-left through lower-left of O) -->
+    <g transform="translate(382, 118) rotate(45)">
+      <!-- Gavel Head (Cylinder barrel) -->
+      <rect x="-15" y="-12" width="30" height="24" rx="2" fill="#15297C" />
+      <!-- Left Collar & Striking Cap -->
+      <rect x="-26" y="-15.5" width="9" height="31" rx="2.5" fill="#15297C" />
+      <rect x="-31" y="-13" width="5" height="26" rx="2" fill="#15297C" />
+      <!-- Right Collar & Striking Cap -->
+      <rect x="17" y="-15.5" width="9" height="31" rx="2.5" fill="#15297C" />
+      <rect x="26" y="-13" width="5" height="26" rx="2" fill="#15297C" />
+      
+      <!-- Gavel Handle crossing through lower-left of O -->
+      <path d="M -6.5, 0 L -6.5, 122 A 6.5,6.5 0 0,0 6.5, 122 L 6.5, 0 Z" fill="#15297C" />
+    </g>
+  </g>
+
+  <!-- Letters G, A, R -->
+  <text x="478" y="195" class="logo-title" letter-spacing="1">GAR</text>
+
+  <!-- Bottom Line Left -->
+  <line x1="28" y1="248" x2="265" y2="248" class="logo-rule" />
+
+  <!-- Subtitle: Grupo Jurídico -->
+  <text x="460" y="262" text-anchor="middle" class="logo-sub">Grupo Jurídico</text>
+
+  <!-- Bottom Line Right -->
+  <line x1="655" y1="248" x2="892" y2="248" class="logo-rule" />
+</svg>
