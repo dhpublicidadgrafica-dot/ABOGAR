@@ -8,6 +8,7 @@ import { ServiceCard } from '../components/ServiceCard';
 import { CTASection } from '../components/CTASection';
 import { SEOHead } from '../components/SEOHead';
 import { ServiceIcon } from '../components/ServiceIcon';
+import { HERO_IMAGE_BASE64 } from '../data/heroImageBase64';
 import {
   ArrowRight,
   Shield,
@@ -20,6 +21,8 @@ import {
 } from 'lucide-react';
 
 export const Home: React.FC = () => {
+  const heroImage = HERO_IMAGE_BASE64;
+
   return (
     <>
       <SEOHead
@@ -30,18 +33,18 @@ export const Home: React.FC = () => {
       {/* Hero Section */}
       <section
         id="hero-section"
-        className="relative min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0D1B54]"
+        className="group relative min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0D1B54]"
       >
         {/* Background Image with Dark Contrast Overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85"
-            alt="Arquitectura corporativa y despacho legal de alta dirección"
-            className="w-full h-full object-cover object-center"
+            src={heroImage}
+            alt="Primer plano de balanza de la justicia dorada con mazo judicial de madera y libros de derecho"
+            className="w-full h-full object-cover object-center transition-all duration-700"
           />
-          {/* Deep Navy Gradient Overlay for WCAG AA Contrast */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0D1B54]/95 via-[#15297C]/90 to-[#0D1B54]/95" />
-          <div className="absolute inset-0 bg-[#0D1B54]/40" />
+          {/* Subtle Navy Gradient Overlay to ensure crisp contrast with white typography */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B54]/90 via-[#0D1B54]/75 to-[#0D1B54]/80" />
+          <div className="absolute inset-0 bg-black/25" />
         </div>
 
         {/* Hero Content */}

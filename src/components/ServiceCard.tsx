@@ -36,7 +36,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
           </Link>
         </h3>
 
-        <p className="mt-3 text-sm text-slate-600 leading-relaxed line-clamp-3">
+        <p className="mt-3 text-sm text-slate-600 leading-relaxed">
           {service.descripcionCorta}
         </p>
       </div>

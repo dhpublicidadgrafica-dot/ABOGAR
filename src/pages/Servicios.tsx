@@ -7,6 +7,7 @@ import { ServiceGrid } from '../components/ServiceGrid';
 import { CTASection } from '../components/CTASection';
 import { SEOHead } from '../components/SEOHead';
 import { Scale, CheckCircle2 } from 'lucide-react';
+import { HERO_IMAGE_BASE64 } from '../data/heroImageBase64';
 
 export const Servicios: React.FC = () => {
   return (
@@ -25,17 +26,17 @@ export const Servicios: React.FC = () => {
 
       {/* Hero Section */}
       <section className="relative py-16 sm:py-24 bg-[#0D1B54] text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-15 pointer-events-none">
+        {/* Background Image with Dark Blue Gradient Overlay */}
+        <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1600&q=80"
-            alt="Libros de derecho y estrado judicial"
-            className="w-full h-full object-cover"
+            src={HERO_IMAGE_BASE64}
+            alt="Primer plano de balanza de la justicia dorada con mazo judicial de madera y libros de derecho"
+            className="w-full h-full object-cover object-center"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B54]/90 via-[#0D1B54]/75 to-[#0D1B54]/80" />
+          <div className="absolute inset-0 bg-black/25" />
         </div>
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#FFE19E] border border-[#FFE19E]/30 text-xs uppercase tracking-widest font-semibold mb-4">
-            Áreas de Práctica
-          </span>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
             Nuestros servicios jurídicos
           </h1>
@@ -58,7 +59,6 @@ export const Servicios: React.FC = () => {
       <section id="catalogo-servicios" className="py-20 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
-            badge="Catálogo Completo"
             title="Especialidades y Áreas de Práctica"
             subtitle="Haga clic en cualquiera de nuestras áreas de especialidad para conocer a detalle el alcance, los temas de atención, el proceso de trabajo y las preguntas frecuentes."
           />

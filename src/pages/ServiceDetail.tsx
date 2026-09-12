@@ -7,8 +7,8 @@ import { FAQAccordion } from '../components/FAQAccordion';
 import { Button } from '../components/Button';
 import { ServiceIcon } from '../components/ServiceIcon';
 import { SEOHead } from '../components/SEOHead';
-import { CTASection } from '../components/CTASection';
 import { NotFound } from './NotFound';
+import { HERO_IMAGE_BASE64 } from '../data/heroImageBase64';
 import {
   ArrowRight,
   Shield,
@@ -52,43 +52,26 @@ export const ServiceDetail: React.FC = () => {
 
       {/* Service Hero */}
       <section className="relative py-16 sm:py-20 bg-[#0D1B54] text-white overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-20">
+        {/* Background Image with Dark Blue Gradient Overlay */}
+        <div className="absolute inset-0 z-0">
           <img
-            src={service.imagen}
-            alt={service.imagenAlt}
+            src={HERO_IMAGE_BASE64}
+            alt={service.imagenAlt || "Primer plano de balanza de la justicia dorada con mazo judicial de madera y libros de derecho"}
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-[#0D1B54]/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B54]/90 via-[#0D1B54]/75 to-[#0D1B54]/80" />
+          <div className="absolute inset-0 bg-black/25" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#FFE19E] border border-[#FFE19E]/30 text-xs uppercase tracking-widest font-semibold mb-4">
-                <ServiceIcon name={service.icono} className="w-4 h-4" />
-                <span>Área Jurídica Especializada</span>
-              </div>
+          <div className="max-w-3xl">
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+              {service.nombre}
+            </h1>
 
-              <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
-                {service.nombre}
-              </h1>
-
-              <p className="mt-4 text-base sm:text-lg text-slate-200 leading-relaxed">
-                {service.descripcionCorta}
-              </p>
-            </div>
-
-            <div className="shrink-0">
-              <Button
-                to={SITE_CONFIG.contacto.whatsappLink}
-                external
-                variant="gold"
-                size="lg"
-                icon={<ArrowRight className="w-4 h-4 ml-1" />}
-              >
-                Solicitar consulta
-              </Button>
-            </div>
+            <p className="mt-4 text-base sm:text-lg text-slate-200 leading-relaxed text-justify">
+              {service.descripcionCorta}
+            </p>
           </div>
         </div>
       </section>
@@ -290,12 +273,6 @@ export const ServiceDetail: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* Service-specific CTA */}
-      <CTASection
-        title={`¿Necesita asesoría en ${service.nombre}?`}
-        subtitle="Un abogado especialista en esta materia analizará su situación y trazará la hoja de ruta jurídica más conveniente."
-      />
     </>
   );
 };

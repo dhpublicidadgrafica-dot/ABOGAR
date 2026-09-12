@@ -5,6 +5,7 @@ import { Breadcrumb } from '../components/Breadcrumb';
 import { ContactForm } from '../components/ContactForm';
 import { LegalModal } from '../components/LegalModal';
 import { SEOHead } from '../components/SEOHead';
+import { HERO_IMAGE_BASE64 } from '../data/heroImageBase64';
 import {
   Phone,
   Mail,
@@ -38,7 +39,17 @@ export const Contacto: React.FC = () => {
 
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 bg-[#0D1B54] text-white overflow-hidden">
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Background Image with Dark Blue Gradient Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={HERO_IMAGE_BASE64}
+            alt="Primer plano de balanza de la justicia dorada con mazo judicial de madera y libros de derecho"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B54]/90 via-[#0D1B54]/75 to-[#0D1B54]/80" />
+          <div className="absolute inset-0 bg-black/25" />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#FFE19E] border border-[#FFE19E]/30 text-xs uppercase tracking-widest font-semibold mb-4">
             Atención al Cliente & Consultas
           </span>
