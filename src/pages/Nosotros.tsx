@@ -36,7 +36,7 @@ export const Nosotros: React.FC = () => {
   const [isDirectorLoading, setIsDirectorLoading] = React.useState(false);
   const [directorModalMsg, setDirectorModalMsg] = React.useState<{ text: string; isError?: boolean } | null>(null);
   const [syncStatus, setSyncStatus] = React.useState<string | null>(null);
-  const [photoSrc, setPhotoSrc] = React.useState<string>('/carlos-nava.jpg');
+  const [photoSrc, setPhotoSrc] = React.useState<string>('/images/Carlos Nava Final.png');
 
   // Al cargar, sincronizar automáticamente cualquier imagen previa con el backend del proyecto
   React.useEffect(() => {
@@ -207,7 +207,7 @@ export const Nosotros: React.FC = () => {
                   src={photoSrc}
                   onError={(e) => {
                     const target = e.currentTarget;
-                    const fallback = "/carlos-nava.jpg";
+                    const fallback = "/images/carlos-nava.jpg";
                     if (target.src !== fallback) {
                       target.src = fallback;
                     }
@@ -429,7 +429,7 @@ export const Nosotros: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {SITE_CONFIG.equipo.map((lawyer) => (
-              <LawyerCard key={lawyer.id} lawyer={lawyer} />
+              <LawyerCard key={lawyer.id} lawyer={lawyer} showExtendedBio={true} />
             ))}
           </div>
         </div>

@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
                 className="flex items-center group focus:outline-none py-0.5 transition-opacity hover:opacity-90"
                 aria-label="ABOGAR Grupo Jurídico - Inicio"
               >
-                <LogoAbogar variant="white" className="h-10 sm:h-12 w-auto max-w-[210px] sm:max-w-[260px]" />
+                <LogoAbogar variant="white" className="h-11 sm:h-13 w-auto max-w-[220px] sm:max-w-[280px]" />
               </Link>
 
               <p className="text-sm text-slate-300 leading-relaxed max-w-sm">

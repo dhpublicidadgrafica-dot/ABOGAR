@@ -32,7 +32,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
         </div>
       )}
       
-      <h2 className={`text-2.5xl sm:text-3xl lg:text-4xl font-serif font-semibold tracking-tight leading-tight ${
+      <h2 className={`text-2xl sm:text-3xl lg:text-4xl font-serif font-bold tracking-tight leading-tight ${
         light ? 'text-white' : 'text-slate-900'
       }`}>
         {title}

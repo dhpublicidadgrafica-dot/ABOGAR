@@ -185,13 +185,28 @@ function saveImagePlugin(): Plugin {
           }
         }
 
-        // Serve any static file in public/images/ directly
+        // Serve any static file in public/images/ or /assets/ directly with URL decoding and fallbacks
         if (req.url && (req.url.startsWith('/images/') || req.url.startsWith('/assets/aistudio/'))) {
           try {
-            const cleanUrl = req.url.split('?')[0];
-            const filePath = path.resolve(__dirname, 'public', cleanUrl.replace(/^\//, ''));
-            if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
-              const ext = path.extname(filePath).toLowerCase();
+            const rawUrl = req.url.split('?')[0];
+            const decodedUrl = decodeURIComponent(rawUrl);
+            const candidates = [
+              path.resolve(__dirname, 'public', decodedUrl.replace(/^\//, '')),
+              path.resolve(__dirname, 'public', rawUrl.replace(/^\//, '')),
+              path.resolve(__dirname, 'public', decodedUrl.replace(/^\//, '').replace(/-/g, ' ')),
+              path.resolve(__dirname, 'public', decodedUrl.replace(/^\//, '').replace(/\s+/g, '-')),
+            ];
+
+            let foundPath: string | null = null;
+            for (const candidate of candidates) {
+              if (fs.existsSync(candidate) && fs.statSync(candidate).isFile()) {
+                foundPath = candidate;
+                break;
+              }
+            }
+
+            if (foundPath) {
+              const ext = path.extname(foundPath).toLowerCase();
               const mimeMap: Record<string, string> = {
                 '.jpg': 'image/jpeg',
                 '.jpeg': 'image/jpeg',
@@ -203,7 +218,7 @@ function saveImagePlugin(): Plugin {
               };
               res.setHeader('Content-Type', mimeMap[ext] || 'application/octet-stream');
               res.setHeader('Cache-Control', 'public, max-age=31536000');
-              fs.createReadStream(filePath).pipe(res);
+              fs.createReadStream(foundPath).pipe(res);
               return;
             }
           } catch {}

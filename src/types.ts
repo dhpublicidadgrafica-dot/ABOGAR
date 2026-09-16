@@ -33,6 +33,11 @@ export interface Lawyer {
   foto: string;
   linkedin?: string;
   colegiatura?: string;
+  tituloEnfoque?: string;
+  enfoqueLegal?: { area: string; detalle: string }[];
+  vision?: string;
+  compromiso?: string;
+  fraseCierre?: string;
 }
 
 export interface ValueItem {

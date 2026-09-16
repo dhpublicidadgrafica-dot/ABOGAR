@@ -5,7 +5,10 @@ import { SERVICES } from '../data/services';
 import { Button } from '../components/Button';
 import { SectionTitle } from '../components/SectionTitle';
 import { ServiceCard } from '../components/ServiceCard';
+import { LawyerCard } from '../components/LawyerCard';
 import { CTASection } from '../components/CTASection';
+import { GoogleReviewsSection } from '../components/GoogleReviewsSection';
+import { LocationMapSection } from '../components/LocationMapSection';
 import { SEOHead } from '../components/SEOHead';
 import { ServiceIcon } from '../components/ServiceIcon';
 import { HERO_IMAGE_BASE64 } from '../data/heroImageBase64';
@@ -13,7 +16,6 @@ import {
   ArrowRight,
   Shield,
   PhoneCall,
-  Scale,
   Award,
   Users,
   Compass,
@@ -49,11 +51,6 @@ export const Home: React.FC = () => {
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-[#FFE19E] border border-[#FFE19E]/30 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-6 backdrop-blur-xs">
-            <Scale className="w-4 h-4 text-[#FFE19E]" />
-            <span>Despacho Jurídico Especializado</span>
-          </div>
-
           <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white max-w-4xl mx-auto leading-[1.15] text-balance">
             {SITE_CONFIG.hero.titulo}
           </h1>
@@ -69,8 +66,24 @@ export const Home: React.FC = () => {
               variant="gold"
               size="lg"
             >
-              Solicitar una consulta
+              Agendar Asesoria
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Sección Equipo de Abogados Especialistas */}
+      <section id="equipo" className="py-20 bg-slate-50 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionTitle
+            title="Abogados Especialistas"
+            subtitle="Profesionales con amplia trayectoria, formación académica continua y vocación de servicio."
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {SITE_CONFIG.equipo.map((lawyer) => (
+              <LawyerCard key={lawyer.id} lawyer={lawyer} />
+            ))}
           </div>
         </div>
       </section>
@@ -133,7 +146,7 @@ export const Home: React.FC = () => {
               size="md"
               icon={<ArrowRight className="w-4 h-4 ml-1 text-[#FFE19E]" />}
             >
-              Explorar los 12 servicios
+              Ver todos los servicios
             </Button>
           </div>
         </div>
@@ -203,11 +216,17 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Sección de Opiniones y Reseñas en Google */}
+      <GoogleReviewsSection />
+
       {/* CTA Final */}
       <CTASection
-        title="¿Necesita asesoría legal?"
+        title="¿Necesitas asesoría juridica?"
         subtitle="Conversemos sobre su caso y encontremos la mejor estrategia jurídica."
       />
+
+      {/* Bloque de Mapa y Ubicación de Nuestras Oficinas */}
+      <LocationMapSection />
     </>
   );
 };

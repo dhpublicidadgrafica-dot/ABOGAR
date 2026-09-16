@@ -442,7 +442,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm rounded shadow-xs transition-all cursor-pointer"
           >
             <MessageSquare className="w-4 h-4" />
-            <span>Consultar por WhatsApp</span>
+            <span>Agendar Asesoria</span>
           </a>
 
           <button

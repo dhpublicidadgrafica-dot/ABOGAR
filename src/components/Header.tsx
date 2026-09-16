@@ -64,7 +64,7 @@ export const Header: React.FC = () => {
               className="flex items-center group focus:outline-none py-0.5 transition-opacity hover:opacity-90"
               aria-label="ABOGAR Grupo Jurídico - Página de inicio"
             >
-              <LogoAbogar className="h-10 sm:h-12 w-auto max-w-[210px] sm:max-w-[260px]" />
+              <LogoAbogar className="h-11 sm:h-13 w-auto max-w-[220px] sm:max-w-[280px]" />
             </Link>
 
             {/* Desktop Navigation */}
@@ -184,7 +184,7 @@ export const Header: React.FC = () => {
                 size="sm"
                 icon={<ArrowRight className="w-3.5 h-3.5 text-[#FFE19E]" />}
               >
-                Solicitar consulta
+                Agendar Asesoria
               </Button>
             </div>
 
@@ -197,7 +197,7 @@ export const Header: React.FC = () => {
                 size="sm"
                 className="hidden sm:inline-flex"
               >
-                Consulta
+                Agendar Asesoria
               </Button>
 
               <button
@@ -310,7 +310,7 @@ export const Header: React.FC = () => {
                   className="w-full"
                   icon={<ArrowRight className="w-4 h-4 ml-1 text-[#FFE19E]" />}
                 >
-                  Solicitar consulta
+                  Agendar Asesoria
                 </Button>
 
                 <div className="mt-4 pt-3 text-xs text-slate-500 space-y-1">

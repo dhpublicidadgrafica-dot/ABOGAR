@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from './Button';
-import { PhoneCall, Shield } from 'lucide-react';
+import { PhoneCall, Shield, ArrowRight } from 'lucide-react';
 import { SITE_CONFIG } from '../data/siteConfig';
 
 interface CTASectionProps {
@@ -13,8 +13,11 @@ interface CTASectionProps {
 }
 
 export const CTASection: React.FC<CTASectionProps> = ({
-  title = '¿Necesita asesoría legal?',
+  title = '¿Necesitas asesoría juridica?',
   subtitle = 'Conversemos sobre su caso y encontremos la mejor estrategia jurídica.',
+  buttonText = 'Agendar Asesoria',
+  buttonTo,
+  external = true,
   className = '',
 }) => {
   return (
@@ -44,9 +47,20 @@ export const CTASection: React.FC<CTASectionProps> = ({
 
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
-            to={`tel:${SITE_CONFIG.contacto.telefonoLimpio}`}
+            to={buttonTo || SITE_CONFIG.contacto.whatsappLink}
+            external={buttonTo ? external : true}
             variant="gold"
             size="lg"
+            icon={<ArrowRight className="w-4 h-4 ml-1" />}
+          >
+            {buttonText}
+          </Button>
+
+          <Button
+            to={`tel:${SITE_CONFIG.contacto.telefonoLimpio}`}
+            variant="secondary"
+            size="lg"
+            className="border-white/30 text-white hover:bg-white/10"
             icon={<PhoneCall className="w-4 h-4 ml-1" />}
           >
             Llamar al {SITE_CONFIG.contacto.telefono}

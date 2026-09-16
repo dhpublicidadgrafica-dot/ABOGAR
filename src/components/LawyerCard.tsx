@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Lawyer } from '../types';
-import { ShieldCheck, Camera, UploadCloud, Link as LinkIcon, Check, X, Loader2 } from 'lucide-react';
+import { Camera, UploadCloud, Link as LinkIcon, Check, X, Loader2, Scale } from 'lucide-react';
 import { saveImageLocallyAndServer } from '../utils/imageStorage';
 
 interface LawyerCardProps {
   lawyer: Lawyer;
   className?: string;
+  showExtendedBio?: boolean;
 }
 
-export const LawyerCard: React.FC<LawyerCardProps> = ({ lawyer, className = '' }) => {
-  const storageKey = `abogar_lawyer_photo_${lawyer.id}`;
+export const LawyerCard: React.FC<LawyerCardProps> = ({ lawyer, className = '', showExtendedBio = false }) => {
+  const storageKey = `abogar_lawyer_photo_final_${lawyer.id}`;
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -20,25 +21,24 @@ export const LawyerCard: React.FC<LawyerCardProps> = ({ lawyer, className = '' }
   const [photoSrc, setPhotoSrc] = useState<string>(() => {
     try {
       const saved = localStorage.getItem(storageKey);
-      if (saved && saved.trim().length > 0) return saved;
-    } catch {
-      // Ignorar error de acceso a storage
-    }
+      if (saved && (saved.startsWith('data:image/') || saved.startsWith('http'))) return saved;
+    } catch {}
     return lawyer.foto;
   });
+  const [imageLoadError, setImageLoadError] = useState(false);
 
-  // Sincronizar si cambia la foto base o si hay una guardada
+  // Sincronizar si cambia la foto base
   useEffect(() => {
     try {
       const saved = localStorage.getItem(storageKey);
-      if (saved && saved.trim().length > 0) {
+      if (saved && (saved.startsWith('data:image/') || saved.startsWith('http'))) {
         setPhotoSrc(saved);
-      } else {
-        setPhotoSrc(lawyer.foto);
+        setImageLoadError(false);
+        return;
       }
-    } catch {
-      setPhotoSrc(lawyer.foto);
-    }
+    } catch {}
+    setPhotoSrc(lawyer.foto);
+    setImageLoadError(false);
   }, [lawyer.foto, storageKey]);
 
   const handleImageFile = (file: File) => {
@@ -50,10 +50,14 @@ export const LawyerCard: React.FC<LawyerCardProps> = ({ lawyer, className = '' }
       const result = e.target?.result as string;
       if (result) {
         setPhotoSrc(result);
+        setImageLoadError(false);
+        if (file.name) {
+          await saveImageLocallyAndServer(storageKey, result, file.name);
+        }
         const res = await saveImageLocallyAndServer(storageKey, result, `${lawyer.id}.jpg`);
         setIsLoading(false);
         if (res.success) {
-          setStatusMsg({ text: '✓ Guardada en /public/images/' });
+          setStatusMsg({ text: '✓ Guardada exitosamente' });
           setTimeout(() => {
             setShowModal(false);
             setStatusMsg(null);
@@ -145,23 +149,51 @@ export const LawyerCard: React.FC<LawyerCardProps> = ({ lawyer, className = '' }
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
       >
-        <img
-          src={photoSrc}
-          alt={`Fotografía del abogado ${lawyer.nombre}`}
-          loading="lazy"
-          referrerPolicy="no-referrer"
-          onError={(e) => {
-            const target = e.currentTarget;
-            if (!target.dataset.triedFallback1) {
-              target.dataset.triedFallback1 = 'true';
-              target.src = `/images/${lawyer.id}.jpg`;
-            } else if (!target.dataset.triedFallback2) {
-              target.dataset.triedFallback2 = 'true';
-              target.src = `/assets/aistudio/${lawyer.id}.jpg`;
-            }
-          }}
-          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-        />
+        {imageLoadError ? (
+          <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-[#101F5E] to-[#15297C] text-white p-6 text-center select-none">
+            <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-3 border border-[#FFE19E]/30 text-[#FFE19E]">
+              <Camera className="w-7 h-7" />
+            </div>
+            <p className="text-xs font-semibold text-[#FFE19E] uppercase tracking-wider mb-1">Cargar Fotografía</p>
+            <p className="text-[11px] text-slate-300 max-w-[200px] mb-3 leading-relaxed">
+              Haz clic o arrastra la foto de {lawyer.nombre} aquí
+            </p>
+            <button
+              type="button"
+              onClick={() => {
+                setStatusMsg(null);
+                setShowModal(true);
+              }}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-[#FFE19E] hover:bg-[#FFE19E]/90 text-[#15297C] font-semibold text-xs transition-colors shadow-sm cursor-pointer"
+            >
+              <UploadCloud className="w-3.5 h-3.5" />
+              <span>Subir fotografía</span>
+            </button>
+          </div>
+        ) : (
+          <img
+            src={photoSrc}
+            alt={`Fotografía del abogado ${lawyer.nombre}`}
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            onError={(e) => {
+              const target = e.currentTarget;
+              if (!target.dataset.triedFallback1) {
+                target.dataset.triedFallback1 = 'true';
+                target.src = `/images/${lawyer.id}.jpg`;
+              } else if (!target.dataset.triedFallback2) {
+                target.dataset.triedFallback2 = 'true';
+                target.src = `/images/${encodeURIComponent(lawyer.nombre.toUpperCase())}.jpg`;
+              } else if (!target.dataset.triedFallback3) {
+                target.dataset.triedFallback3 = 'true';
+                target.src = `/assets/aistudio/${lawyer.id}.jpg`;
+              } else {
+                setImageLoadError(true);
+              }
+            }}
+            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-[#15297C]/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity pointer-events-none" />
 
         {/* Floating trigger to change photo (opens modal with link/file options) */}
@@ -184,14 +216,6 @@ export const LawyerCard: React.FC<LawyerCardProps> = ({ lawyer, className = '' }
             <UploadCloud className="w-10 h-10 text-[#FFE19E] mb-2 animate-bounce" />
             <p className="text-sm font-semibold text-center">Suelta la fotografía aquí</p>
             <p className="text-xs text-slate-200 text-center mt-1">Se guardará en /public/images/</p>
-          </div>
-        )}
-
-        {/* License or Specialty badge floating */}
-        {lawyer.colegiatura && (
-          <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs px-2.5 py-1 rounded text-[11px] font-medium text-slate-700 shadow-xs flex items-center gap-1 border border-slate-200/80 pointer-events-none">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#15297C]" />
-            <span>{lawyer.colegiatura}</span>
           </div>
         )}
 
@@ -286,10 +310,47 @@ export const LawyerCard: React.FC<LawyerCardProps> = ({ lawyer, className = '' }
       )}
 
       {/* Details body */}
-      <div className="p-6 flex-1 flex flex-col">
-        <p className="text-sm text-slate-600 leading-relaxed">
+      <div className="p-6 flex-1 flex flex-col space-y-4">
+        <p className="text-sm text-slate-600 leading-relaxed whitespace-pre-line">
           {lawyer.descripcion}
         </p>
+
+        {showExtendedBio && lawyer.enfoqueLegal && lawyer.enfoqueLegal.length > 0 && (
+          <div className="pt-3 border-t border-slate-200">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#15297C] mb-2.5 flex items-center gap-1.5">
+              <Scale className="w-3.5 h-3.5 text-[#15297C]" />
+              <span>{lawyer.tituloEnfoque || 'Mi enfoque legal:'}</span>
+            </h4>
+            <div className="space-y-2">
+              {lawyer.enfoqueLegal.map((item, idx) => (
+                <div key={idx} className="bg-slate-50 rounded-lg p-2.5 border border-slate-200/70 text-xs">
+                  <span className="font-semibold text-slate-900 block mb-0.5">{item.area}:</span>
+                  <span className="text-slate-600 leading-relaxed">{item.detalle}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {showExtendedBio && lawyer.vision && (
+          <div className="bg-[#15297C]/5 rounded-lg p-3 border border-[#15297C]/15 text-xs">
+            <span className="font-bold text-[#15297C] block mb-1">Mi visión:</span>
+            <span className="text-slate-700 leading-relaxed">{lawyer.vision}</span>
+          </div>
+        )}
+
+        {showExtendedBio && lawyer.compromiso && (
+          <div className="bg-amber-50/70 rounded-lg p-3 border border-amber-200/80 text-xs">
+            <span className="font-bold text-amber-900 block mb-1">Mi compromiso:</span>
+            <span className="text-slate-700 leading-relaxed">{lawyer.compromiso}</span>
+          </div>
+        )}
+
+        {showExtendedBio && lawyer.fraseCierre && (
+          <div className="bg-slate-100/80 border-l-2 border-[#15297C] p-3 rounded-r-lg text-xs italic text-slate-700 leading-relaxed">
+            "{lawyer.fraseCierre}"
+          </div>
+        )}
       </div>
     </div>
   );

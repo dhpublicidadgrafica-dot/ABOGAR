@@ -221,7 +221,7 @@ export const ServiceDetail: React.FC = () => {
                     className="w-full justify-center"
                     icon={<ArrowRight className="w-4 h-4 ml-1" />}
                   >
-                    Agendar consulta por WhatsApp
+                    Agendar Asesoria
                   </Button>
 
                   <a
