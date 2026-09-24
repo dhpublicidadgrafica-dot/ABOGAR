@@ -15,17 +15,6 @@ export const FloatingWhatsApp: React.FC = () => {
         href={SITE_CONFIG.contacto.whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={(e) => {
-          try {
-            const win = window.open(SITE_CONFIG.contacto.whatsappLink, '_blank', 'noopener,noreferrer');
-            if (win) {
-              e.preventDefault();
-              win.focus();
-            }
-          } catch {
-            // fallback to default anchor navigation
-          }
-        }}
         aria-label="Abrir chat de WhatsApp con ABOGAR Grupo Jurídico"
         className="w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-3 focus:ring-emerald-400 focus:ring-offset-2 relative"
       >

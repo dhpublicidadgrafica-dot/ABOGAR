@@ -10,7 +10,7 @@ interface LawyerCardProps {
 }
 
 export const LawyerCard: React.FC<LawyerCardProps> = ({ lawyer, className = '', showExtendedBio = false }) => {
-  const storageKey = `abogar_lawyer_photo_final_${lawyer.id}`;
+  const storageKey = `abogar_lawyer_photo_v5_${lawyer.id}`;
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [showModal, setShowModal] = useState(false);

@@ -19,7 +19,7 @@ export default function App() {
       <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-[#FFE19E] selection:text-[#15297C]">
         <Header />
-        <main className="flex-1">
+        <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">
           <Routes>
             {/* 1. Inicio */}
             <Route path="/" element={<Home />} />

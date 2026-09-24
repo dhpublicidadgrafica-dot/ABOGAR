@@ -36,6 +36,21 @@ export const ServiceDetail: React.FC = () => {
       <SEOHead
         title={`${service.nombre} | ${SITE_CONFIG.nombreDespacho}`}
         description={service.seoDescription}
+        canonicalPath={`/servicios/${service.slug}`}
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          'name': service.nombre,
+          'description': service.descripcionCorta,
+          'provider': {
+            '@type': 'LegalService',
+            'name': SITE_CONFIG.nombreDespacho,
+            'url': 'https://abogar.co',
+            'telephone': SITE_CONFIG.contacto.telefonoLimpio,
+          },
+          'areaServed': 'Colombia',
+          'url': `https://abogar.co/servicios/${service.slug}`,
+        }}
       />
 
       {/* Breadcrumb Bar */}

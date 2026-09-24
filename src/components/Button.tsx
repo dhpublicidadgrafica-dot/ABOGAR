@@ -67,17 +67,6 @@ export const Button: React.FC<ButtonProps> = ({
             if (props.onClick) {
               (props.onClick as any)(e);
             }
-            if (!isTelOrMail) {
-              try {
-                const win = window.open(to, '_blank', 'noopener,noreferrer');
-                if (win) {
-                  e.preventDefault();
-                  win.focus();
-                }
-              } catch {
-                // If window.open was restricted, let default anchor behavior execute
-              }
-            }
           }}
           {...(props as any)}
         >

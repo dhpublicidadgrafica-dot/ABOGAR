@@ -15,6 +15,7 @@ export const Servicios: React.FC = () => {
       <SEOHead
         title={`Servicios Jurídicos | ${SITE_CONFIG.nombreDespacho}`}
         description="Explore las 12 áreas de práctica jurídica que domina nuestro despacho. Asesoría estratégica para personas y corporaciones."
+        canonicalPath="/servicios"
       />
 
       {/* Breadcrumb Bar */}

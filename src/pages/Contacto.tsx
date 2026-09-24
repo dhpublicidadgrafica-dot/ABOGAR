@@ -29,6 +29,7 @@ export const Contacto: React.FC = () => {
       <SEOHead
         title={`Contacto | ${SITE_CONFIG.nombreDespacho}`}
         description="Estamos disponibles para escuchar su situación y orientarle sobre las alternativas jurídicas disponibles. Solicite su consulta legal hoy."
+        canonicalPath="/contacto"
       />
 
       {/* Breadcrumb Bar */}
@@ -121,17 +122,6 @@ export const Contacto: React.FC = () => {
                         href={SITE_CONFIG.contacto.whatsappLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={(e) => {
-                          try {
-                            const win = window.open(SITE_CONFIG.contacto.whatsappLink, '_blank', 'noopener,noreferrer');
-                            if (win) {
-                              e.preventDefault();
-                              win.focus();
-                            }
-                          } catch {
-                            // fallback
-                          }
-                        }}
                         className="text-base font-bold text-emerald-700 hover:text-emerald-800 transition-colors inline-flex items-center gap-1"
                       >
                         <span>{SITE_CONFIG.contacto.whatsapp}</span>

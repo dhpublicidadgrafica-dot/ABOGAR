@@ -28,8 +28,9 @@ export const Home: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Despacho de Abogados | Asesoría Jurídica Profesional"
-        description="Soluciones jurídicas estratégicas, profesionales y personalizadas para personas y empresas. Especialistas en 12 áreas del derecho."
+        title="ABOGAR Grupo Jurídico | Asesoría Legal y Litigios en Colombia"
+        description="Soluciones jurídicas estratégicas, profesionales y personalizadas para personas y empresas. Especialistas en 12 áreas del derecho en Colombia."
+        canonicalPath="/"
       />
 
       {/* Hero Section */}

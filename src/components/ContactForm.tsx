@@ -101,6 +101,13 @@ export const ContactForm: React.FC<ContactFormProps> = ({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Honeypot spam check
+    const honeypot = (e.currentTarget.elements.namedItem('website_hp') as HTMLInputElement)?.value;
+    if (honeypot) {
+      // Spam bot detected
+      return;
+    }
+
     if (!validate()) {
       return;
     }
@@ -206,6 +213,16 @@ export const ContactForm: React.FC<ContactFormProps> = ({
           <span>{errors.form}</span>
         </div>
       )}
+
+      {/* Campo Honeypot invisible para prevención de bots */}
+      <input
+        type="text"
+        name="website_hp"
+        style={{ display: 'none' }}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+      />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {/* Nombre completo */}
@@ -428,17 +445,6 @@ export const ContactForm: React.FC<ContactFormProps> = ({
             href={SITE_CONFIG.contacto.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={(e) => {
-              try {
-                const win = window.open(SITE_CONFIG.contacto.whatsappLink, '_blank', 'noopener,noreferrer');
-                if (win) {
-                  e.preventDefault();
-                  win.focus();
-                }
-              } catch {
-                // fallback
-              }
-            }}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm rounded shadow-xs transition-all cursor-pointer"
           >
             <MessageSquare className="w-4 h-4" />

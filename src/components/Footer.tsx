@@ -34,17 +34,6 @@ export const Footer: React.FC = () => {
                   href={SITE_CONFIG.redesSociales.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={(e) => {
-                    try {
-                      const win = window.open(SITE_CONFIG.redesSociales.facebook, '_blank', 'noopener,noreferrer');
-                      if (win) {
-                        e.preventDefault();
-                        win.focus();
-                      }
-                    } catch {
-                      // fallback
-                    }
-                  }}
                   aria-label="Página oficial en Facebook: ABOGAR Colombia"
                   className="w-9 h-9 rounded bg-white/5 hover:bg-[#FFE19E] hover:text-[#0D1B54] text-slate-300 flex items-center justify-center transition-all"
                 >
@@ -54,17 +43,6 @@ export const Footer: React.FC = () => {
                   href={SITE_CONFIG.redesSociales.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={(e) => {
-                    try {
-                      const win = window.open(SITE_CONFIG.redesSociales.instagram, '_blank', 'noopener,noreferrer');
-                      if (win) {
-                        e.preventDefault();
-                        win.focus();
-                      }
-                    } catch {
-                      // fallback
-                    }
-                  }}
                   aria-label="Perfil oficial en Instagram: @abogar.co"
                   className="w-9 h-9 rounded bg-white/5 hover:bg-[#FFE19E] hover:text-[#0D1B54] text-slate-300 flex items-center justify-center transition-all"
                 >

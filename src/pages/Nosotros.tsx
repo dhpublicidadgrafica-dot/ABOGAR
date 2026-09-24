@@ -36,7 +36,7 @@ export const Nosotros: React.FC = () => {
   const [isDirectorLoading, setIsDirectorLoading] = React.useState(false);
   const [directorModalMsg, setDirectorModalMsg] = React.useState<{ text: string; isError?: boolean } | null>(null);
   const [syncStatus, setSyncStatus] = React.useState<string | null>(null);
-  const [photoSrc, setPhotoSrc] = React.useState<string>('/images/Carlos Nava Final.png');
+  const [photoSrc, setPhotoSrc] = React.useState<string>('/images/carlos-nava.png');
 
   // Al cargar, sincronizar automáticamente cualquier imagen previa con el backend del proyecto
   React.useEffect(() => {
@@ -123,6 +123,7 @@ export const Nosotros: React.FC = () => {
       <SEOHead
         title={`Nosotros | ${SITE_CONFIG.nombreDespacho}`}
         description="Conozca la trayectoria, visión ética, valores fundamentales y el equipo de abogados especialistas de nuestro despacho."
+        canonicalPath="/nosotros"
       />
 
       {/* Breadcrumb Bar */}
@@ -212,8 +213,10 @@ export const Nosotros: React.FC = () => {
                       target.src = fallback;
                     }
                   }}
-                  alt="Abogado y Asesor Estratégico - ABOGAR Grupo Jurídico"
+                  alt="Carlos Nava - Abogado y Asesor Estratégico de ABOGAR Grupo Jurídico"
                   className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                  loading="lazy"
+                  decoding="async"
                   referrerPolicy="no-referrer"
                 />
 
