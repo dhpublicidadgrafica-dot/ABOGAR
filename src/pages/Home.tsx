@@ -11,6 +11,7 @@ import { GoogleReviewsSection } from '../components/GoogleReviewsSection';
 import { LocationMapSection } from '../components/LocationMapSection';
 import { SEOHead } from '../components/SEOHead';
 import { ServiceIcon } from '../components/ServiceIcon';
+import { PaymentButton } from '../components/PaymentButton';
 import { HERO_IMAGE_BASE64 } from '../data/heroImageBase64';
 import {
   ArrowRight,
@@ -69,6 +70,10 @@ export const Home: React.FC = () => {
             >
               Agendar Asesoria
             </Button>
+            <PaymentButton
+              variant="outline-light"
+              size="lg"
+            />
           </div>
         </div>
       </section>

@@ -17,7 +17,9 @@ import {
   Compass,
   Building,
   ExternalLink,
+  CreditCard,
 } from 'lucide-react';
+import { PaymentButton } from '../components/PaymentButton';
 
 export const Contacto: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -193,6 +195,26 @@ export const Contacto: React.FC = () => {
 
                 <div className="mt-6 pt-4 border-t border-slate-100 text-[11px] text-slate-500 italic text-center">
                   * Datos de contacto ficticios configurables en el archivo de configuración.
+                </div>
+              </div>
+
+              {/* Canal de Pago Seguro en Línea */}
+              <div className="bg-gradient-to-br from-[#0D1B54] to-[#15297C] text-white p-7 rounded-lg shadow-md border border-[#FFE19E]/20">
+                <div className="flex items-center gap-2.5 text-[#FFE19E] mb-2 font-serif font-bold text-lg">
+                  <CreditCard className="w-5 h-5 text-[#FFE19E]" />
+                  <span>Pagos Seguros en Línea</span>
+                </div>
+                <p className="text-xs text-slate-200 leading-relaxed mb-5">
+                  Cancele de manera ágil y protegida sus honorarios profesionales, consultas jurídicas o servicios contratados mediante nuestra pasarela oficial de pagos (tarjetas de crédito, débito y PSE).
+                </p>
+                <PaymentButton
+                  size="lg"
+                  variant="gold"
+                  className="w-full text-center"
+                />
+                <div className="mt-3.5 flex items-center justify-center gap-1.5 text-[11px] text-slate-300">
+                  <ShieldCheck className="w-4 h-4 text-[#FFE19E] shrink-0" />
+                  <span>Transacción cifrada y procesada por pasarela certificada</span>
                 </div>
               </div>
 

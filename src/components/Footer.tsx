@@ -5,6 +5,7 @@ import { SITE_CONFIG } from '../data/siteConfig';
 import { SERVICES } from '../data/services';
 import { LegalModal } from './LegalModal';
 import { LogoAbogar } from './LogoAbogar';
+import { PaymentButton } from './PaymentButton';
 
 export const Footer: React.FC = () => {
   const [modalType, setModalType] = useState<'privacy' | 'terms' | null>(null);
@@ -48,6 +49,14 @@ export const Footer: React.FC = () => {
                 >
                   <Instagram className="w-4 h-4" />
                 </a>
+              </div>
+
+              {/* Botón de pago en footer */}
+              <div className="pt-2">
+                <PaymentButton size="sm" variant="gold" />
+                <p className="text-[11px] text-slate-400 mt-1.5 flex items-center gap-1">
+                  <span>Pago seguro de honorarios y consultas</span>
+                </p>
               </div>
             </div>
 

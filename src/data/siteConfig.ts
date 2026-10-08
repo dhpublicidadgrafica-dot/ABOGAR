@@ -1,4 +1,7 @@
 import { Lawyer, TrustStat, ValueItem } from '../types';
+import { PAYMENT_URL, isValidPaymentUrl } from '../config/paymentConfig';
+
+export { PAYMENT_URL, isValidPaymentUrl };
 
 /**
  * CONFIGURACIÓN CENTRAL DEL DESPACHO JURÍDICO
@@ -10,6 +13,11 @@ export const SITE_CONFIG = {
   nombreDespacho: "ABOGAR",
   subtituloDespacho: "Grupo Jurídico",
   razonSocial: "ABOGAR Grupo Jurídico S.A.S.",
+  
+  // Pasarela oficial de pagos
+  pagos: {
+    paymentUrl: PAYMENT_URL,
+  },
   
   // Información de contacto principal (Configurable)
   contacto: {

@@ -5,6 +5,7 @@ import { SITE_CONFIG } from '../data/siteConfig';
 import { SERVICES } from '../data/services';
 import { Button } from './Button';
 import { LogoAbogar } from './LogoAbogar';
+import { PaymentButton } from './PaymentButton';
 
 export const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -175,8 +176,9 @@ export const Header: React.FC = () => {
               </Link>
             </nav>
 
-            {/* CTA Button in header */}
-            <div className="hidden lg:flex items-center gap-3">
+            {/* CTA Buttons in header */}
+            <div className="hidden lg:flex items-center gap-2.5">
+              <PaymentButton size="sm" variant="gold" />
               <Button
                 to={SITE_CONFIG.contacto.whatsappLink}
                 external
@@ -188,7 +190,7 @@ export const Header: React.FC = () => {
               </Button>
             </div>
 
-            {/* Mobile Hamburger Button */}
+            {/* Mobile Hamburger & Quick CTA */}
             <div className="flex lg:hidden items-center gap-2">
               <Button
                 to={SITE_CONFIG.contacto.whatsappLink}
