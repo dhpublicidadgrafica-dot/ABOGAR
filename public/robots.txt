@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /legales
+Disallow: /politica-de-privacidad
+Disallow: /terminos-y-condiciones
+Disallow: /terminos
+Disallow: /privacidad
 
 # Sitemaps
 Sitemap: https://abogargroup.com/sitemap.xml

@@ -18,6 +18,7 @@ interface SEOHeadProps {
   breadcrumbs?: BreadcrumbItem[];
   faqs?: FAQItem[];
   schema?: Record<string, any>;
+  noIndex?: boolean;
 }
 
 export const SEOHead: React.FC<SEOHeadProps> = ({
@@ -28,6 +29,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   breadcrumbs,
   faqs,
   schema,
+  noIndex = false,
 }) => {
   useEffect(() => {
     const DOMAIN = 'https://abogargroup.com';
@@ -51,6 +53,13 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       }
       el.setAttribute(attr, value);
     };
+
+    // Robots directive
+    if (noIndex) {
+      setMeta('meta[name="robots"]', 'content', 'noindex, nofollow, noarchive');
+    } else {
+      setMeta('meta[name="robots"]', 'content', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+    }
 
     // 2. Set descriptions & titles
     if (description) {
@@ -146,8 +155,11 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       if (fScript) fScript.remove();
       const sScript = document.getElementById('page-structured-data');
       if (sScript) sScript.remove();
+      if (noIndex) {
+        setMeta('meta[name="robots"]', 'content', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+      }
     };
-  }, [title, description, canonicalPath, ogType, breadcrumbs, faqs, schema]);
+  }, [title, description, canonicalPath, ogType, breadcrumbs, faqs, schema, noIndex]);
 
   return null;
 };

@@ -13,6 +13,7 @@ import { Servicios } from './pages/Servicios';
 import { ServiceDetail } from './pages/ServiceDetail';
 import { Contacto } from './pages/Contacto';
 import { NotFound } from './pages/NotFound';
+import { Legales } from './pages/Legales';
 
 export default function App() {
   return (
@@ -37,6 +38,11 @@ export default function App() {
 
             {/* 4. Contacto */}
             <Route path="/contacto" element={<Contacto />} />
+
+            {/* Páginas Legales (No-indexadas) */}
+            <Route path="/legales" element={<Legales />} />
+            <Route path="/politica-de-privacidad" element={<Legales />} />
+            <Route path="/terminos-y-condiciones" element={<Legales />} />
 
             {/* Ruta 404 para cualquier URL inexistente */}
             <Route path="*" element={<NotFound />} />
