@@ -36,6 +36,12 @@
   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
   RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
+  # 2.1. Redirección 301 canónica obligatoria: forzar barra final / para concordancia con etiquetas canónicas
+  # Evita bucles de redirección con los buscadores al solicitar carpetas sin barra
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !(.[a-zA-Z0-9]{1,5}|/)$
+  RewriteRule ^(.*)$ https://abogargroup.com/$1/ [R=301,L]
+
   # 3. Servir directamente archivos físicos existentes (imágenes, scripts, css, robots.txt, sitemap.xml)
   RewriteCond %{REQUEST_FILENAME} -f
   RewriteRule ^ - [L]

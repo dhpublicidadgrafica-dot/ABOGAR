@@ -72,12 +72,16 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     setMeta('meta[name="twitter:title"]', 'content', title);
     setMeta('meta[property="og:type"]', 'content', ogType);
 
-    // 3. Canonical URL & og:url
-    const cleanPath = canonicalPath
+    // 3. Canonical URL & og:url (Con barra final obligatoria para evitar bucles de redirección)
+    let cleanPath = canonicalPath
       ? canonicalPath.startsWith('/')
         ? canonicalPath
         : `/${canonicalPath}`
       : window.location.pathname;
+
+    if (!cleanPath.endsWith('/')) {
+      cleanPath = `${cleanPath}/`;
+    }
 
     const fullUrl = cleanPath === '/' ? `${DOMAIN}/` : `${DOMAIN}${cleanPath}`;
 

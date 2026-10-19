@@ -57,11 +57,11 @@ function generatePagesList(): PageMeta[] {
       outFile: 'nosotros/index.html',
       title: 'Nosotros | ABOGAR Grupo Jurídico - Firma Legal en Colombia',
       description: 'Conozca la trayectoria, valores y equipo de abogados especialistas de ABOGAR Grupo Jurídico. Más de 15 años brindando seguridad jurídica y litigio ético.',
-      canonical: `${DOMAIN}/nosotros`,
+      canonical: `${DOMAIN}/nosotros/`,
       ogType: 'website',
       breadcrumbs: [
         { name: 'Inicio', item: `${DOMAIN}/` },
-        { name: 'Nosotros', item: `${DOMAIN}/nosotros` }
+        { name: 'Nosotros', item: `${DOMAIN}/nosotros/` }
       ],
     },
     // 3. Directorio de Servicios
@@ -70,11 +70,11 @@ function generatePagesList(): PageMeta[] {
       outFile: 'servicios/index.html',
       title: 'Áreas de Práctica y Servicios Jurídicos | ABOGAR Grupo Jurídico',
       description: 'Catálogo de 12 especialidades jurídicas: Laboral, Familia, Migratorio, Pensiones, Comercial, Civil, Tutelas, Seguros y más. Asesoría legal en Colombia.',
-      canonical: `${DOMAIN}/servicios`,
+      canonical: `${DOMAIN}/servicios/`,
       ogType: 'website',
       breadcrumbs: [
         { name: 'Inicio', item: `${DOMAIN}/` },
-        { name: 'Servicios Jurídicos', item: `${DOMAIN}/servicios` }
+        { name: 'Servicios Jurídicos', item: `${DOMAIN}/servicios/` }
       ],
     },
     // 4. Contacto
@@ -83,11 +83,11 @@ function generatePagesList(): PageMeta[] {
       outFile: 'contacto/index.html',
       title: 'Contacto y Consultas Legales | ABOGAR Grupo Jurídico',
       description: 'Agende su consulta jurídica presencial en Bello o virtual en toda Colombia. Atención por WhatsApp +57 315 809 0334 y formulario en línea.',
-      canonical: `${DOMAIN}/contacto`,
+      canonical: `${DOMAIN}/contacto/`,
       ogType: 'website',
       breadcrumbs: [
         { name: 'Inicio', item: `${DOMAIN}/` },
-        { name: 'Contacto', item: `${DOMAIN}/contacto` }
+        { name: 'Contacto', item: `${DOMAIN}/contacto/` }
       ],
     },
   ];
@@ -99,13 +99,13 @@ function generatePagesList(): PageMeta[] {
       outFile: `servicios/${s.slug}/index.html`,
       title: s.seoTitle || `${s.nombre} | ABOGAR Grupo Jurídico`,
       description: s.seoDescription || s.descripcionCorta,
-      canonical: `${DOMAIN}/servicios/${s.slug}`,
+      canonical: `${DOMAIN}/servicios/${s.slug}/`,
       ogType: 'article',
       ogImage: s.imagen || `${DOMAIN}/images/logo-original.png`,
       breadcrumbs: [
         { name: 'Inicio', item: `${DOMAIN}/` },
-        { name: 'Servicios Jurídicos', item: `${DOMAIN}/servicios` },
-        { name: s.nombre, item: `${DOMAIN}/servicios/${s.slug}` }
+        { name: 'Servicios Jurídicos', item: `${DOMAIN}/servicios/` },
+        { name: s.nombre, item: `${DOMAIN}/servicios/${s.slug}/` }
       ],
       faqs: s.preguntasFrecuentes || [],
       schema: {
@@ -113,7 +113,7 @@ function generatePagesList(): PageMeta[] {
         '@type': 'LegalService',
         'name': s.nombre,
         'description': s.descripcionCorta,
-        'url': `${DOMAIN}/servicios/${s.slug}`,
+        'url': `${DOMAIN}/servicios/${s.slug}/`,
         'provider': {
           '@id': `${DOMAIN}/#organization`
         },
@@ -133,7 +133,7 @@ function generatePagesList(): PageMeta[] {
     outFile: 'legales/index.html',
     title: 'Políticas Legales y Habeas Data | ABOGAR Grupo Jurídico',
     description: 'Marco regulatorio, política de tratamiento de datos personales y términos generales de uso de ABOGAR GRUPO JURÍDICO S.A.S.',
-    canonical: `${DOMAIN}/legales`,
+    canonical: `${DOMAIN}/legales/`,
     noIndex: true,
   });
 
@@ -142,7 +142,7 @@ function generatePagesList(): PageMeta[] {
     outFile: 'politica-de-privacidad/index.html',
     title: 'Política de Privacidad y Tratamiento de Datos | ABOGAR',
     description: 'Política institucional de privacidad y protección de datos personales de ABOGAR GRUPO JURÍDICO S.A.S.',
-    canonical: `${DOMAIN}/politica-de-privacidad`,
+    canonical: `${DOMAIN}/politica-de-privacidad/`,
     noIndex: true,
   });
 
@@ -151,7 +151,7 @@ function generatePagesList(): PageMeta[] {
     outFile: 'terminos-y-condiciones/index.html',
     title: 'Términos y Condiciones Generales de Uso | ABOGAR',
     description: 'Términos y condiciones de uso del portal web oficial de ABOGAR GRUPO JURÍDICO S.A.S.',
-    canonical: `${DOMAIN}/terminos-y-condiciones`,
+    canonical: `${DOMAIN}/terminos-y-condiciones/`,
     noIndex: true,
   });
 
@@ -161,7 +161,7 @@ function generatePagesList(): PageMeta[] {
     outFile: '404.html',
     title: 'Página no encontrada (404) | ABOGAR Grupo Jurídico',
     description: 'La página solicitada no se encuentra disponible en nuestro portal.',
-    canonical: `${DOMAIN}/404`,
+    canonical: `${DOMAIN}/404/`,
     noIndex: true,
   });
 
@@ -179,6 +179,9 @@ function processHtml(template: string, page: PageMeta): string {
     /<meta\s+name=["']description["']\s+content=["'][\s\S]*?["']\s*\/?>/i,
     `<meta name="description" content="${escapeHtml(page.description)}" />`
   );
+
+  // Strip meta keywords completely (Google ignores it and modern SEO avoids it)
+  html = html.replace(/<meta\s+name=["']keywords["']\s+content=["'][\s\S]*?["']\s*\/?>\n?/i, '');
 
   // 3. Canonical URL
   html = html.replace(

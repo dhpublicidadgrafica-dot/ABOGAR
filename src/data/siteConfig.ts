@@ -48,7 +48,7 @@ export const SITE_CONFIG = {
 
   // Lema y propuesta de valor
   hero: {
-    titulo: "Soluciones jurídicas que protegen, resuelven y hacen avanzar tus asuntos",
+    titulo: "Firma de Abogados en Medellín",
     subtitulo: "Asesoría y representación jurídica para personas, familias y empresas en Colombia.",
   },
 

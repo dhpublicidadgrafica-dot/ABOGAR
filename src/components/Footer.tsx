@@ -62,10 +62,10 @@ export const Footer: React.FC = () => {
 
             {/* Column 2: Navigation Links */}
             <div>
-              <h4 className="font-serif text-base font-semibold text-white tracking-wide mb-4 flex items-center gap-2">
+              <p className="font-serif text-base font-semibold text-white tracking-wide mb-4 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FFE19E]" />
                 Navegación
-              </h4>
+              </p>
               <ul className="space-y-2.5 text-sm">
                 <li>
                   <Link to="/" className="text-slate-300 hover:text-[#FFE19E] transition-colors flex items-center gap-1.5">
@@ -96,10 +96,10 @@ export const Footer: React.FC = () => {
 
             {/* Column 3: Legal Areas (First batch) */}
             <div>
-              <h4 className="font-serif text-base font-semibold text-white tracking-wide mb-4 flex items-center gap-2">
+              <p className="font-serif text-base font-semibold text-white tracking-wide mb-4 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FFE19E]" />
                 Áreas de Práctica
-              </h4>
+              </p>
               <ul className="space-y-2 text-xs sm:text-sm">
                 {SERVICES.slice(0, 6).map((s) => (
                   <li key={s.id}>
@@ -125,10 +125,10 @@ export const Footer: React.FC = () => {
 
             {/* Column 4: Contact info */}
             <div>
-              <h4 className="font-serif text-base font-semibold text-white tracking-wide mb-4 flex items-center gap-2">
+              <p className="font-serif text-base font-semibold text-white tracking-wide mb-4 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FFE19E]" />
                 Contacto
-              </h4>
+              </p>
               <ul className="space-y-3 text-xs sm:text-sm">
                 <li className="flex items-start gap-2.5">
                   <Phone className="w-4 h-4 text-[#FFE19E] shrink-0 mt-0.5" />

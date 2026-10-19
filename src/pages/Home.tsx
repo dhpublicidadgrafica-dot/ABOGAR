@@ -118,9 +118,9 @@ export const Home: React.FC = () => {
                   >
                     {stat.valor}
                   </div>
-                  <h3 className="mt-2 text-base font-semibold text-slate-900">
+                  <p className="mt-2 text-base font-semibold text-slate-900">
                     {stat.etiqueta}
-                  </h3>
+                  </p>
                 </div>
               </div>
             ))}
