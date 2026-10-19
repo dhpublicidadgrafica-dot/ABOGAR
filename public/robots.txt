@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://abogar.co/sitemap.xml
+Sitemap: https://abogargroup.com/sitemap.xml

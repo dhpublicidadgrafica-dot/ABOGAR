@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { AnalyticsTracker } from './components/AnalyticsTracker';
 
 // Pages
 import { Home } from './pages/Home';
@@ -17,6 +18,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <AnalyticsTracker />
       <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-[#FFE19E] selection:text-[#15297C]">
         <Header />
         <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">

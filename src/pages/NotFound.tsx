@@ -12,6 +12,7 @@ export const NotFound: React.FC = () => {
         title={`Página no encontrada | ${SITE_CONFIG.nombreDespacho}`}
         description="La página solicitada no se encuentra disponible o ha sido reubicada."
         canonicalPath="/404"
+        ogType="website"
       />
 
       <section className="min-h-[70vh] flex items-center justify-center py-20 px-4 sm:px-6 bg-slate-50">

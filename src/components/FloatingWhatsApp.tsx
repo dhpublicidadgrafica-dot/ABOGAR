@@ -16,6 +16,15 @@ export const FloatingWhatsApp: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Abrir chat de WhatsApp con ABOGAR Grupo Jurídico"
+        onClick={() => {
+          if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+            window.gtag('event', 'generate_lead', {
+              event_category: 'contact',
+              event_label: 'Boton Flotante WhatsApp',
+              method: 'WhatsApp',
+            });
+          }
+        }}
         className="w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-3 focus:ring-emerald-400 focus:ring-offset-2 relative"
       >
         {/* Pulse radar effect */}

@@ -53,6 +53,15 @@ export const PaymentButton: React.FC<PaymentButtonProps> = ({
     setIsLoading(true);
     setShowRedirectNotice(true);
 
+    // Enviar evento de conversión a Google Analytics (GA4)
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('event', 'begin_checkout', {
+        event_category: 'ecommerce',
+        event_label: 'Boton Realizar Pago Pasarela Bold',
+        payment_gateway: 'Bold',
+      });
+    }
+
     if (onBeforeRedirect) {
       onBeforeRedirect();
     }

@@ -13,9 +13,14 @@ export const Servicios: React.FC = () => {
   return (
     <>
       <SEOHead
-        title={`Servicios Jurídicos | ${SITE_CONFIG.nombreDespacho}`}
-        description="Explore las 12 áreas de práctica jurídica que domina nuestro despacho. Asesoría estratégica para personas y corporaciones."
+        title="Servicios Jurídicos en Bello y Medellín | ABOGAR"
+        description="Catálogo de 12 áreas jurídicas: derecho laboral, pensiones, familia, visas colombianas, comercial y litigios. Asesoría estratégica para personas y empresas."
         canonicalPath="/servicios"
+        ogType="website"
+        breadcrumbs={[
+          { name: 'Inicio', item: '/' },
+          { name: 'Servicios', item: '/servicios' },
+        ]}
       />
 
       {/* Breadcrumb Bar */}

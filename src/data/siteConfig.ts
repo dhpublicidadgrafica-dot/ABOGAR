@@ -19,6 +19,13 @@ export const SITE_CONFIG = {
     paymentUrl: PAYMENT_URL,
   },
   
+  // Analítica y herramientas de rastreo Google
+  analitica: {
+    googleAnalyticsId: "G-QVMZ87K9HM",
+    googleTagManagerId: "GTM-WKCQ3CB3",
+    googleSearchConsoleToken: "KXecpPR5vAWTGyWjZnVz5AUpjd2e41G2Uf5e8lCD5CM",
+  },
+  
   // Información de contacto principal (Configurable)
   contacto: {
     telefono: "+57 315 809 0334",

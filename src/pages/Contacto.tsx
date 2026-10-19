@@ -29,9 +29,14 @@ export const Contacto: React.FC = () => {
   return (
     <>
       <SEOHead
-        title={`Contacto | ${SITE_CONFIG.nombreDespacho}`}
-        description="Estamos disponibles para escuchar su situación y orientarle sobre las alternativas jurídicas disponibles. Solicite su consulta legal hoy."
+        title="Contacto y Asesoría Legal | ABOGAR Bello Antioquia"
+        description="Agenda tu asesoría jurídica con ABOGAR Grupo Jurídico en Bello, Antioquia. Atención en oficina y virtual para personas y empresas. Llámanos o escríbenos hoy."
         canonicalPath="/contacto"
+        ogType="website"
+        breadcrumbs={[
+          { name: 'Inicio', item: '/' },
+          { name: 'Contacto', item: '/contacto' },
+        ]}
       />
 
       {/* Breadcrumb Bar */}

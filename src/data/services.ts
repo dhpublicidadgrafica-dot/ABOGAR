@@ -61,7 +61,7 @@ export const SERVICES: ServiceArea[] = [
         respuesta: "Varía según el salario del trabajador: si devenga menos de 10 salarios mínimos legales, son 30 días de salario por el primer año y 20 días por cada año subsiguiente proporcional; si devenga más de 10 salarios mínimos, son 20 días por el primer año y 15 por cada adicional."
       }
     ],
-    seoTitle: "Derecho Laboral Individual y Colectivo | ABOGAR Grupo Jurídico",
+    seoTitle: "Derecho Laboral Individual y Colectivo | ABOGAR",
     seoDescription: "Especialistas en derecho laboral en Colombia: liquidaciones, fueros de estabilidad, despidos sin justa causa, negociación sindical y demandas laborales."
   },
   {
@@ -125,7 +125,7 @@ export const SERVICES: ServiceArea[] = [
       }
     ],
     seoTitle: "Trámites de Visas Colombianas | ABOGAR Grupo Jurídico",
-    seoDescription: "Asesoría jurídica en visas colombianas Tipo V, M y R ante Cancillería. Nómadas digitales, matrimonio, inversión y permisos de trabajo."
+    seoDescription: "Asesoría jurídica en visas colombianas Tipo V, M y R ante Cancillería. Visa de nómadas digitales, matrimonio, inversión, estudio y permisos de trabajo."
   },
   {
     id: "derecho-pensional",
@@ -377,7 +377,7 @@ export const SERVICES: ServiceArea[] = [
       }
     ],
     seoTitle: "Derecho de Familia en Colombia | ABOGAR Grupo Jurídico",
-    seoDescription: "Abogados expertos en derecho de familia: divorcios, liquidación conyugal, custodia, cuotas de alimentos y sucesiones en notarías y juzgados."
+    seoDescription: "Abogados expertos en derecho de familia en Bello y Medellín: divorcios, liquidación de sociedad conyugal, custodia, cuotas de alimentos y sucesiones."
   },
   {
     id: "nacionalidad-y-registro-civil",
@@ -440,7 +440,7 @@ export const SERVICES: ServiceArea[] = [
       }
     ],
     seoTitle: "Nacionalidad y Registro Civil en Colombia | ABOGAR",
-    seoDescription: "Abogados expertos en nacionalidad colombiana por adopción, carta de naturaleza, corrección de registros civiles y trámites ante la Cancillería."
+    seoDescription: "Abogados expertos en nacionalidad colombiana por adopción, carta de naturaleza, corrección de registros civiles y trámites ante Cancillería en Colombia."
   },
   {
     id: "litigio-civil",
@@ -503,7 +503,7 @@ export const SERVICES: ServiceArea[] = [
       }
     ],
     seoTitle: "Litigio Civil en Colombia | ABOGAR Grupo Jurídico",
-    seoDescription: "Abogados litigantes en derecho civil en Colombia: procesos ejecutivos, embargos, restitución de inmuebles, pertenencias y responsabilidad civil."
+    seoDescription: "Abogados litigantes en derecho civil en Colombia: procesos ejecutivos, embargos, restitución de inmuebles, pertenencias y responsabilidad civil contractual."
   },
   {
     id: "derecho-comercial",
@@ -566,7 +566,7 @@ export const SERVICES: ServiceArea[] = [
       }
     ],
     seoTitle: "Derecho Comercial y Societario en Colombia | ABOGAR",
-    seoDescription: "Abogados corporativos y comerciales en Colombia: creación de S.A.S., contratos mercantiles, cobro de facturas, insolvencia y litigio societario."
+    seoDescription: "Abogados corporativos y comerciales en Colombia: creación de empresas S.A.S., contratos mercantiles, cobro de facturas, insolvencia y litigio societario."
   },
   {
     id: "acciones-constitucionales-tutela",
@@ -755,6 +755,6 @@ export const SERVICES: ServiceArea[] = [
       }
     ],
     seoTitle: "Derecho Penal y Defensa Técnica en Colombia | ABOGAR",
-    seoDescription: "Abogados penalistas en Colombia: defensa técnica en juicio oral, audiencias preliminares, representación de víctimas y delitos corporativos."
+    seoDescription: "Abogados penalistas en Bello y Medellín: defensa técnica en juicio oral, audiencias preliminares, representación de víctimas y delitos penales corporativos."
   }
 ];

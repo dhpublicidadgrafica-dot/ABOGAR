@@ -29,9 +29,11 @@ export const Home: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="ABOGAR Grupo Jurídico | Asesoría Legal y Litigios en Colombia"
-        description="Soluciones jurídicas estratégicas, profesionales y personalizadas para personas y empresas. Especialistas en 12 áreas del derecho en Colombia."
+        title="ABOGAR Grupo Jurídico | Abogados Bello y Medellín"
+        description="Firma de abogados en Bello y Medellín, Antioquia. Especialistas en derecho laboral, familia, pensiones, visas y comercial. Consulta legal y asesoría estratégica."
         canonicalPath="/"
+        ogType="website"
+        breadcrumbs={[{ name: 'Inicio', item: '/' }]}
       />
 
       {/* Hero Section */}

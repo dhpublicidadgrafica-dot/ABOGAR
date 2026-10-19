@@ -34,9 +34,19 @@ export const ServiceDetail: React.FC = () => {
   return (
     <>
       <SEOHead
-        title={`${service.nombre} | ${SITE_CONFIG.nombreDespacho}`}
+        title={service.seoTitle && service.seoTitle.length <= 60 ? service.seoTitle : service.nombre}
         description={service.seoDescription}
         canonicalPath={`/servicios/${service.slug}`}
+        ogType="article"
+        breadcrumbs={[
+          { name: 'Inicio', item: '/' },
+          { name: 'Servicios', item: '/servicios' },
+          { name: service.nombre, item: `/servicios/${service.slug}` },
+        ]}
+        faqs={service.preguntasFrecuentes.map((f) => ({
+          question: f.pregunta,
+          answer: f.respuesta,
+        }))}
         schema={{
           '@context': 'https://schema.org',
           '@type': 'Service',
@@ -44,12 +54,25 @@ export const ServiceDetail: React.FC = () => {
           'description': service.descripcionCorta,
           'provider': {
             '@type': 'LegalService',
-            'name': SITE_CONFIG.nombreDespacho,
-            'url': 'https://abogar.co',
-            'telephone': SITE_CONFIG.contacto.telefonoLimpio,
+            '@id': 'https://abogargroup.com/#organization',
+            'name': 'ABOGAR Grupo Jurídico',
+            'url': 'https://abogargroup.com',
+            'telephone': '+573158090334',
+            'address': {
+              '@type': 'PostalAddress',
+              'streetAddress': 'Calle 51 # 50-70, Oficina 200',
+              'addressLocality': 'Bello',
+              'addressRegion': 'Antioquia',
+              'postalCode': '051051',
+              'addressCountry': 'CO',
+            },
           },
-          'areaServed': 'Colombia',
-          'url': `https://abogar.co/servicios/${service.slug}`,
+          'areaServed': [
+            { '@type': 'City', 'name': 'Bello' },
+            { '@type': 'City', 'name': 'Medellín' },
+            { '@type': 'Country', 'name': 'Colombia' },
+          ],
+          'url': `https://abogargroup.com/servicios/${service.slug}`,
         }}
       />
 

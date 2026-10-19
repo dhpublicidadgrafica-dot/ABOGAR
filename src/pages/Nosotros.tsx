@@ -121,9 +121,14 @@ export const Nosotros: React.FC = () => {
   return (
     <>
       <SEOHead
-        title={`Nosotros | ${SITE_CONFIG.nombreDespacho}`}
-        description="Conozca la trayectoria, visión ética, valores fundamentales y el equipo de abogados especialistas de nuestro despacho."
+        title="Nosotros | ABOGAR Grupo Jurídico Bello Antioquia"
+        description="Conoce a ABOGAR Grupo Jurídico en Bello y Medellín. Equipo de abogados expertos en derecho corporativo, laboral y familiar con ética, rigor y resultados."
         canonicalPath="/nosotros"
+        ogType="website"
+        breadcrumbs={[
+          { name: 'Inicio', item: '/' },
+          { name: 'Nosotros', item: '/nosotros' },
+        ]}
       />
 
       {/* Breadcrumb Bar */}
