@@ -12,7 +12,8 @@ export { PAYMENT_URL, isValidPaymentUrl };
 export const SITE_CONFIG = {
   nombreDespacho: "ABOGAR",
   subtituloDespacho: "Grupo Jurídico",
-  razonSocial: "ABOGAR Grupo Jurídico S.A.S.",
+  razonSocial: "ABOGAR GRUPO JURÍDICO S.A.S.",
+  nit: "901723917-1",
   
   // Pasarela oficial de pagos
   pagos: {
@@ -22,7 +23,7 @@ export const SITE_CONFIG = {
   // Analítica y herramientas de rastreo Google
   analitica: {
     googleAnalyticsId: "G-QVMZ87K9HM",
-    googleTagManagerId: "GTM-WKCQ3CB3",
+    googleTagManagerId: "GTM-P4F5XL7Z",
     googleSearchConsoleToken: "KXecpPR5vAWTGyWjZnVz5AUpjd2e41G2Uf5e8lCD5CM",
   },
   
@@ -33,8 +34,9 @@ export const SITE_CONFIG = {
     whatsapp: "+57 315 809 0334",
     whatsappLink: "https://wa.me/573158090334?text=Hola%2C%20deseo%20solicitar%20una%20asesor%C3%ADa%20jur%C3%ADdica%20con%20ABOGAR%20Grupo%20Jur%C3%ADdico",
     email: "grupojuridicoabogar@gmail.com",
-    direccion: "Calle 51 # 50-70, Of. 200, Bello - Antioquia",
-    direccionCompleta: "Calle 51 # 50-70 / Oficina: 200 / Bello - Antioquia",
+    habeasDataEmail: "grupojuridicoabogar@gmail.com",
+    direccion: "Calle 51 # 50-70, Oficina 200 (y 201), Bello – Antioquia",
+    direccionCompleta: "Calle 51 # 50-70, Oficina 200 (y 201), Bello – Antioquia, Colombia",
     horario: "Lunes a viernes, 8:00 a.m. - 5:00 p.m.",
   },
 

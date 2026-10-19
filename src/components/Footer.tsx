@@ -182,7 +182,23 @@ export const Footer: React.FC = () => {
 
             <div className="text-center md:text-right shrink-0">
               <p>© {new Date().getFullYear()} {SITE_CONFIG.nombreDespacho}. Todos los derechos reservados.</p>
-              <p className="text-[11px] text-slate-400 mt-0.5">Sitio oficial corporativo.</p>
+              <div className="flex items-center justify-center md:justify-end gap-2 mt-1.5 text-[11px] text-slate-400">
+                <button
+                  type="button"
+                  onClick={() => setModalType('privacy')}
+                  className="hover:text-[#FFE19E] transition-colors underline-offset-2 hover:underline cursor-pointer"
+                >
+                  Política de Privacidad
+                </button>
+                <span className="text-slate-600">|</span>
+                <button
+                  type="button"
+                  onClick={() => setModalType('terms')}
+                  className="hover:text-[#FFE19E] transition-colors underline-offset-2 hover:underline cursor-pointer"
+                >
+                  Términos y Condiciones
+                </button>
+              </div>
             </div>
           </div>
         </div>
