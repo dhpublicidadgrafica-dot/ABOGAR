@@ -1,3 +1,28 @@
+# ==============================================================================
+# CONFIGURACIÓN DE SEGURIDAD, ENCABEZADOS Y REDIRECCIÓN CANÓNICA - ABOGAR
+# ==============================================================================
+
+# Cabeceras de Seguridad y Confianza del Dominio (Security Headers)
+<IfModule mod_headers.c>
+  # 1. HSTS (HTTP Strict Transport Security): 1 año con subdominios y precarga
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+
+  # 2. Protección contra MIME-sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # 3. Política de referidos segura
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # 4. Protección contra Clickjacking / Iframes fraudulentos
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # 5. Protección XSS heredada para navegadores antiguos
+  Header always set X-XSS-Protection "1; mode=block"
+
+  # 6. Política de Permisos del Navegador (Permissions Policy)
+  Header always set Permissions-Policy "geolocation=(self), microphone=(), camera=()"
+</IfModule>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /

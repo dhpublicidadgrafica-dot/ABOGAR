@@ -43,8 +43,8 @@ function generatePagesList(): PageMeta[] {
     {
       path: '/',
       outFile: 'index.html',
-      title: 'ABOGAR | Grupo Jurídico - Asesoría y Litigio en Colombia',
-      description: 'Firma jurídica en Bello y Medellín, Colombia. Asesoría legal y litigio estratégico en Derecho Laboral, Familia, Migratorio, Pensiones, Comercial y Civil.',
+      title: 'Abogados en Medellín y Bello | ABOGAR Grupo Jurídico',
+      description: 'Firma de abogados en Medellín y Bello especializada en derecho laboral, familiar, pensiones y comercial. Consulta hoy con nuestros especialistas.',
       canonical: `${DOMAIN}/`,
       ogType: 'website',
       breadcrumbs: [
