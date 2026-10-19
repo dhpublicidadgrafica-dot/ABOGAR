@@ -15,9 +15,9 @@ import { Contacto } from './pages/Contacto';
 import { NotFound } from './pages/NotFound';
 import { Legales } from './pages/Legales';
 
-export default function App() {
+export function AppContent() {
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
       <AnalyticsTracker />
       <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-[#FFE19E] selection:text-[#15297C]">
@@ -51,6 +51,14 @@ export default function App() {
         <Footer />
         <FloatingWhatsApp />
       </div>
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   );
 }
