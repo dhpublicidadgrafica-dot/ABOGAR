@@ -12,6 +12,7 @@ import { Nosotros } from './pages/Nosotros';
 import { Servicios } from './pages/Servicios';
 import { ServiceDetail } from './pages/ServiceDetail';
 import { Contacto } from './pages/Contacto';
+import { AbogadosMedellin } from './pages/AbogadosMedellin';
 import { NotFound } from './pages/NotFound';
 import { Legales } from './pages/Legales';
 
@@ -38,6 +39,10 @@ export function AppContent() {
 
             {/* 4. Contacto */}
             <Route path="/contacto" element={<Contacto />} />
+
+            {/* Landing Local SEO: Abogados en Medellín */}
+            <Route path="/abogados-medellin" element={<AbogadosMedellin />} />
+            <Route path="/abogados-medellin/" element={<AbogadosMedellin />} />
 
             {/* Páginas Legales (No-indexadas) */}
             <Route path="/legales" element={<Legales />} />

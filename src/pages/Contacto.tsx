@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import { SITE_CONFIG } from '../data/siteConfig';
 import { Breadcrumb } from '../components/Breadcrumb';
 import { ContactForm } from '../components/ContactForm';
@@ -180,7 +180,7 @@ export const Contacto: React.FC = () => {
                   </div>
 
                   {/* Horario */}
-                  <div className="flex items-start gap-3.5">
+                  <div className="flex items-start gap-3.5 pb-4 border-b border-slate-100">
                     <div className="w-10 h-10 rounded bg-[#15297C]/10 text-[#15297C] flex items-center justify-center shrink-0">
                       <Clock className="w-5 h-5" />
                     </div>
@@ -196,9 +196,22 @@ export const Contacto: React.FC = () => {
                       </p>
                     </div>
                   </div>
+
+                  {/* Cobertura metropolitana con enlazado contextual sutil */}
+                  <div className="pt-2 text-xs text-slate-600 leading-relaxed bg-slate-50 p-3.5 rounded border border-slate-100">
+                    <span className="font-semibold text-slate-800">Cobertura en el Valle de Aburrá:</span>{' '}
+                    Además de nuestra sede principal en Bello, gestionamos litigios y asesorías corporativas presenciales y virtuales a través de nuestros{' '}
+                    <Link
+                      to="/abogados-medellin/"
+                      className="font-medium text-[#15297C] hover:text-[#0D1B54] underline decoration-[#FFE19E] decoration-2 underline-offset-2 transition-colors"
+                    >
+                      abogados en Medellín
+                    </Link>{' '}
+                    (La Alpujarra, El Poblado, Laureles), así como en Envigado, Itagüí y Sabaneta.
+                  </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-100 text-[11px] text-slate-500 italic text-center">
+                <div className="mt-5 pt-4 border-t border-slate-100 text-[11px] text-slate-500 italic text-center">
                   * Datos de contacto ficticios configurables en el archivo de configuración.
                 </div>
               </div>

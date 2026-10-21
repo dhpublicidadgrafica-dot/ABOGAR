@@ -90,6 +90,76 @@ function generatePagesList(): PageMeta[] {
         { name: 'Contacto', item: `${DOMAIN}/contacto/` }
       ],
     },
+    // 4.1. Landing Local SEO Medellín
+    {
+      path: '/abogados-medellin',
+      outFile: 'abogados-medellin/index.html',
+      title: 'Abogados en Medellín | Litigio y Asesoría Legal | ABOGAR',
+      description: 'Firma de abogados en Medellín especializada en litigio ante La Alpujarra, derecho laboral, comercial, familia y penal. Consulta hoy tu caso con expertos.',
+      canonical: `${DOMAIN}/abogados-medellin/`,
+      ogType: 'website',
+      ogImage: `${DOMAIN}/images/hero-justicia.jpg`,
+      breadcrumbs: [
+        { name: 'Inicio', item: `${DOMAIN}/` },
+        { name: 'Zonas de Cobertura', item: `${DOMAIN}/contacto/` },
+        { name: 'Abogados en Medellín', item: `${DOMAIN}/abogados-medellin/` }
+      ],
+      faqs: [
+        {
+          pregunta: '¿Dónde atienden consultas presenciales y virtuales para clientes de Medellín?',
+          respuesta: 'Brindamos atención personalizada para Medellín mediante dos modalidades: presencial en nuestra sede principal metropolitana en Bello (Calle 51 # 50-70, a escasos minutos de la estación Bello del Metro y conectada con todo el Valle de Aburrá) y reuniones concertadas en centros empresariales del corredor de La Alpujarra o El Poblado. Asimismo, disponemos de plataforma de asesoría jurídica virtual de alta resolución para clientes que requieren atención inmediata desde cualquier comuna de Medellín.'
+        },
+        {
+          pregunta: '¿Representan litigios activos en el Palacio de Justicia de La Alpujarra?',
+          respuesta: 'Sí. Nuestro equipo de abogados litigantes cuenta con amplia presencia en el Palacio de Justicia de Medellín "José Félix de Restrepo" (La Alpujarra), litigando diariamente ante los Juzgados Civiles, Laborales, de Familia, Administrativos y Penales del Circuito de Medellín, así como ante el Tribunal Superior del Distrito Judicial de Medellín y el Tribunal Administrativo de Antioquia.'
+        },
+        {
+          pregunta: '¿Cómo gestionan trámites laborales ante el Ministerio del Trabajo en Medellín?',
+          respuesta: 'Acompañamos y apoderamos a empleadores y trabajadores en audiencias de conciliación prejudicial, descargos, quejas por acoso laboral e investigaciones administrativas ante la Dirección Territorial de Antioquia del Ministerio del Trabajo, ubicada en la Calle 56 (sector Villanueva/Centro de Medellín), asegurando actas con plenos efectos de cosa juzgada.'
+        },
+        {
+          pregunta: '¿Cuánto cuesta una consulta jurídica preliminar para un caso en Medellín?',
+          respuesta: 'Nuestras tarifas se fundamentan en criterios de proporcionalidad, transparencia y las pautas del Colegio de Abogados de Colombia. Ofrecemos un primer acercamiento diagnóstico para analizar los antecedentes del caso y emitir una propuesta formal de honorarios (fijos, por etapas o bajo modalidad de cuota litis según la naturaleza del asunto), sin cobros ocultos y con pasarela de pago digital certificada.'
+        },
+        {
+          pregunta: '¿Atienden asuntos urgentes como audiencias de garantías o tutelas de salud?',
+          respuesta: 'Sí. Disponemos de un protocolo de atención prioritaria para audiencias concentradas penales (legalización de captura, imputación y medida de aseguramiento) en los centros de servicios judiciales de Medellín, así como para la radicación inmediata de acciones de tutela con solicitud de medida cautelar provisional ante vulneraciones graves al derecho a la salud o debido proceso.'
+        }
+      ],
+      schema: {
+        '@context': 'https://schema.org',
+        '@type': 'LegalService',
+        '@id': `${DOMAIN}/abogados-medellin/#legalservice`,
+        'name': 'ABOGAR Grupo Jurídico - Abogados en Medellín',
+        'description': 'Firma jurídica con representación legal, litigio estratégico y asesoría empresarial en el Distrito Especial de Medellín y Área Metropolitana del Valle de Aburrá.',
+        'url': `${DOMAIN}/abogados-medellin/`,
+        'telephone': '+573158090334',
+        'priceRange': '$$',
+        'image': `${DOMAIN}/images/hero-justicia.jpg`,
+        'address': {
+          '@type': 'PostalAddress',
+          'streetAddress': 'Calle 51 # 50-70, Oficina 200 (Cobertura directa en Medellín y La Alpujarra)',
+          'addressLocality': 'Medellín',
+          'addressRegion': 'Antioquia',
+          'postalCode': '050015',
+          'addressCountry': 'CO'
+        },
+        'geo': {
+          '@type': 'GeoCoordinates',
+          'latitude': 6.2442,
+          'longitude': -75.5812
+        },
+        'areaServed': [
+          { '@type': 'City', 'name': 'Medellín' },
+          { '@type': 'AdministrativeArea', 'name': 'La Alpujarra' },
+          { '@type': 'AdministrativeArea', 'name': 'El Poblado' },
+          { '@type': 'AdministrativeArea', 'name': 'Laureles' },
+          { '@type': 'AdministrativeArea', 'name': 'Bello' },
+          { '@type': 'AdministrativeArea', 'name': 'Envigado' },
+          { '@type': 'AdministrativeArea', 'name': 'Itagüí' }
+        ]
+      }
+    },
   ];
 
   // 5. Los 12 Servicios Individuales
