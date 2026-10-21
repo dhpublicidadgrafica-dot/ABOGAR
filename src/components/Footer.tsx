@@ -74,19 +74,19 @@ export const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/nosotros" className="text-slate-300 hover:text-[#FFE19E] transition-colors flex items-center gap-1.5">
+                  <Link to="/nosotros/" className="text-slate-300 hover:text-[#FFE19E] transition-colors flex items-center gap-1.5">
                     <ArrowRight className="w-3 h-3 text-[#FFE19E]/60" />
                     <span>Nosotros</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/servicios" className="text-slate-300 hover:text-[#FFE19E] transition-colors flex items-center gap-1.5">
+                  <Link to="/servicios/" className="text-slate-300 hover:text-[#FFE19E] transition-colors flex items-center gap-1.5">
                     <ArrowRight className="w-3 h-3 text-[#FFE19E]/60" />
                     <span>Servicios Jurídicos</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contacto" className="text-slate-300 hover:text-[#FFE19E] transition-colors flex items-center gap-1.5">
+                  <Link to="/contacto/" className="text-slate-300 hover:text-[#FFE19E] transition-colors flex items-center gap-1.5">
                     <ArrowRight className="w-3 h-3 text-[#FFE19E]/60" />
                     <span>Contacto</span>
                   </Link>
@@ -104,7 +104,7 @@ export const Footer: React.FC = () => {
                 {SERVICES.slice(0, 6).map((s) => (
                   <li key={s.id}>
                     <Link
-                      to={`/servicios/${s.slug}`}
+                      to={`/servicios/${s.slug}/`}
                       className="text-slate-300 hover:text-[#FFE19E] transition-colors line-clamp-1"
                     >
                       {s.nombre}
@@ -113,7 +113,7 @@ export const Footer: React.FC = () => {
                 ))}
                 <li className="pt-1">
                   <Link
-                    to="/servicios"
+                    to="/servicios/"
                     className="text-[#FFE19E] hover:underline font-medium text-xs inline-flex items-center gap-1"
                   >
                     <span>Ver las 12 áreas</span>

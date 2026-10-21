@@ -149,7 +149,7 @@ export const Home: React.FC = () => {
           {/* Button to view all 12 services */}
           <div className="mt-12 text-center">
             <Button
-              to="/servicios"
+              to="/servicios/"
               variant="primary"
               size="md"
               icon={<ArrowRight className="w-4 h-4 ml-1 text-[#FFE19E]" />}

@@ -82,7 +82,7 @@ export const Header: React.FC = () => {
               </Link>
 
               <Link
-                to="/nosotros"
+                to="/nosotros/"
                 className={`px-3.5 py-2 text-sm font-medium rounded transition-colors ${
                   isActive('/nosotros')
                     ? 'text-[#15297C] font-semibold bg-[#15297C]/5'
@@ -96,7 +96,7 @@ export const Header: React.FC = () => {
               <div className="relative" ref={dropdownRef}>
                 <div className="flex items-center">
                   <Link
-                    to="/servicios"
+                    to="/servicios/"
                     className={`pl-3.5 pr-1.5 py-2 text-sm font-medium rounded-l transition-colors ${
                       isActive('/servicios')
                         ? 'text-[#15297C] font-semibold bg-[#15297C]/5'
@@ -132,7 +132,7 @@ export const Header: React.FC = () => {
                         12 Áreas de Práctica Jurídica
                       </span>
                       <Link
-                        to="/servicios"
+                        to="/servicios/"
                         onClick={() => setIsServicesDropdownOpen(false)}
                         className="text-xs text-[#15297C] hover:underline font-semibold flex items-center gap-1"
                       >
@@ -144,10 +144,10 @@ export const Header: React.FC = () => {
                     {SERVICES.map((service) => (
                       <Link
                         key={service.id}
-                        to={`/servicios/${service.slug}`}
+                        to={`/servicios/${service.slug}/`}
                         onClick={() => setIsServicesDropdownOpen(false)}
                         className={`p-2.5 rounded-md hover:bg-slate-50 flex flex-col group transition-colors ${
-                          location.pathname === `/servicios/${service.slug}`
+                          location.pathname.startsWith(`/servicios/${service.slug}`)
                             ? 'bg-[#15297C]/5 border-l-2 border-[#15297C]'
                             : ''
                         }`}
@@ -165,7 +165,7 @@ export const Header: React.FC = () => {
               </div>
 
               <Link
-                to="/contacto"
+                to="/contacto/"
                 className={`px-3.5 py-2 text-sm font-medium rounded transition-colors ${
                   isActive('/contacto')
                     ? 'text-[#15297C] font-semibold bg-[#15297C]/5'
@@ -234,7 +234,7 @@ export const Header: React.FC = () => {
               </Link>
 
               <Link
-                to="/nosotros"
+                to="/nosotros/"
                 className={`px-4 py-3 rounded-md text-base font-medium transition-colors ${
                   isActive('/nosotros')
                     ? 'bg-[#15297C] text-white'
@@ -248,7 +248,7 @@ export const Header: React.FC = () => {
               <div>
                 <div className="flex items-center justify-between px-4 py-3 rounded-md hover:bg-slate-100">
                   <Link
-                    to="/servicios"
+                    to="/servicios/"
                     className="text-base font-medium text-slate-800 flex-1"
                   >
                     Servicios Jurídicos
@@ -272,9 +272,9 @@ export const Header: React.FC = () => {
                     {SERVICES.map((s) => (
                       <Link
                         key={s.id}
-                        to={`/servicios/${s.slug}`}
+                        to={`/servicios/${s.slug}/`}
                         className={`block px-3 py-2 text-sm rounded transition-colors ${
-                          location.pathname === `/servicios/${s.slug}`
+                          location.pathname.startsWith(`/servicios/${s.slug}`)
                             ? 'text-[#15297C] font-bold bg-[#15297C]/10'
                             : 'text-slate-700 hover:text-[#15297C] hover:bg-slate-200/50'
                         }`}
@@ -283,7 +283,7 @@ export const Header: React.FC = () => {
                       </Link>
                     ))}
                     <Link
-                      to="/servicios"
+                      to="/servicios/"
                       className="block px-3 py-2 text-xs font-semibold text-[#15297C] underline"
                     >
                       Ver todos los 12 servicios →
@@ -293,7 +293,7 @@ export const Header: React.FC = () => {
               </div>
 
               <Link
-                to="/contacto"
+                to="/contacto/"
                 className={`px-4 py-3 rounded-md text-base font-medium transition-colors ${
                   isActive('/contacto')
                     ? 'bg-[#15297C] text-white'

@@ -31,7 +31,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
         </div>
 
         <h3 className="text-xl font-serif font-semibold text-slate-900 group-hover:text-[#15297C] transition-colors line-clamp-1">
-          <Link to={`/servicios/${service.slug}`} className="focus:outline-none focus:underline">
+          <Link to={`/servicios/${service.slug}/`} className="focus:outline-none focus:underline">
             {service.nombre}
           </Link>
         </h3>
@@ -43,7 +43,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
 
       <div className="mt-6 pt-5 border-t border-slate-100 flex items-center">
         <Link
-          to={`/servicios/${service.slug}`}
+          to={`/servicios/${service.slug}/`}
           className="inline-flex items-center gap-2 text-sm font-semibold text-[#15297C] hover:text-[#0D1B54] transition-all group-hover:translate-x-0.5"
           aria-label={`Ver detalles de ${service.nombre}`}
         >

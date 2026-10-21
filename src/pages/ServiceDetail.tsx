@@ -81,7 +81,7 @@ export const ServiceDetail: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumb
             items={[
-              { label: 'Servicios', to: '/servicios' },
+              { label: 'Servicios', to: '/servicios/' },
               { label: service.nombre },
             ]}
           />
@@ -281,7 +281,7 @@ export const ServiceDetail: React.FC = () => {
               <div className="bg-white p-6 rounded-lg border border-slate-200 shadow-xs">
                 <h4 className="font-serif text-base font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center justify-between">
                   <span>Otras Áreas de Práctica</span>
-                  <Link to="/servicios" className="text-xs text-[#15297C] font-semibold hover:underline">
+                  <Link to="/servicios/" className="text-xs text-[#15297C] font-semibold hover:underline">
                     Ver todas
                   </Link>
                 </h4>
@@ -290,7 +290,7 @@ export const ServiceDetail: React.FC = () => {
                   {SERVICES.filter((s) => s.slug !== service.slug).map((s) => (
                     <li key={s.id}>
                       <Link
-                        to={`/servicios/${s.slug}`}
+                        to={`/servicios/${s.slug}/`}
                         className="text-xs sm:text-sm text-slate-600 hover:text-[#15297C] hover:bg-slate-50 py-1.5 px-2 rounded block transition-colors line-clamp-1"
                       >
                         • {s.nombre}
