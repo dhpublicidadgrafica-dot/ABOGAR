@@ -43,8 +43,8 @@ function generatePagesList(): PageMeta[] {
     {
       path: '/',
       outFile: 'index.html',
-      title: 'Abogados en Medellín y Bello | ABOGAR Grupo Jurídico',
-      description: 'Firma de abogados en Medellín y Bello especializada en derecho laboral, familiar, pensiones y comercial. Consulta hoy con nuestros especialistas.',
+      title: 'Abogados en Bello | ABOGAR Grupo Jurídico',
+      description: 'Firma de abogados en Bello especializada en derecho laboral, familiar, pensiones y comercial. Consulta hoy con nuestros especialistas.',
       canonical: `${DOMAIN}/`,
       ogType: 'website',
       breadcrumbs: [

@@ -29,8 +29,8 @@ export const Home: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Abogados en Medellín y Bello | ABOGAR Grupo Jurídico"
-        description="Firma de abogados en Medellín y Bello especializada en derecho laboral, familiar, pensiones y comercial. Consulta hoy con nuestros especialistas."
+        title="Abogados en Bello | ABOGAR Grupo Jurídico"
+        description="Firma de abogados en Bello especializada en derecho laboral, familiar, pensiones y comercial. Consulta hoy con nuestros especialistas."
         canonicalPath="/"
         ogType="website"
         breadcrumbs={[{ name: 'Inicio', item: '/' }]}

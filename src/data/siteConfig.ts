@@ -48,7 +48,7 @@ export const SITE_CONFIG = {
 
   // Lema y propuesta de valor
   hero: {
-    titulo: "Firma de Abogados en Medellín",
+    titulo: "Firma de Abogados en Bello",
     subtitulo: "Asesoría y representación jurídica para personas, familias y empresas en Colombia.",
   },
 
