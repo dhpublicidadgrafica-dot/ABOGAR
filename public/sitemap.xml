@@ -36,6 +36,11 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+  <url>
+    <loc>https://abogargroup.com/abogados-envigado/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
   <!-- Catálogo de 12 Servicios Jurídicos -->
   <url>

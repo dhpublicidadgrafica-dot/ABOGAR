@@ -301,6 +301,80 @@ function generatePagesList(): PageMeta[] {
         ]
       }
     },
+    // 4.4. Landing Local SEO Envigado
+    {
+      path: '/abogados-envigado',
+      outFile: 'abogados-envigado/index.html',
+      title: 'Abogados en Envigado | Familia, Sucesiones y Civil | ABOGAR',
+      description: 'Asesoría y representación jurídica en Envigado: divorcios, sucesiones, despidos laborales, contratos y litigio civil. ¡Agenda tu cita presencial o virtual!',
+      canonical: `${DOMAIN}/abogados-envigado/`,
+      ogType: 'website',
+      ogImage: `${DOMAIN}/images/hero-justicia.webp`,
+      breadcrumbs: [
+        { name: 'Inicio', item: `${DOMAIN}/` },
+        { name: 'Zonas de Cobertura', item: `${DOMAIN}/contacto/` },
+        { name: 'Abogados en Envigado', item: `${DOMAIN}/abogados-envigado/` }
+      ],
+      faqs: [
+        {
+          pregunta: '¿Tramitan procesos notariales de familia y sucesiones en Envigado?',
+          respuesta: 'Sí. Tramitamos de manera ágil sucesiones por mutuo acuerdo mediante escritura pública ante la Notaría Primera, Notaría Segunda y Notaría Tercera del Círculo de Envigado, así como divorcios notariales exprés, cesación de efectos civiles de matrimonio religioso y capitulaciones matrimoniales. En caso de discrepancias entre herederos o cónyuges, asumimos la representación contenciosa ante los Juzgados de Familia del Circuito de Envigado.'
+        },
+        {
+          pregunta: '¿Representan litigios ante los Juzgados de Envigado?',
+          respuesta: 'Representamos a personas naturales y empresas ante los Juzgados Civiles Municipales y del Circuito de Envigado, Juzgados de Familia y centros de conciliación de la localidad (incluida la Personería Municipal de Envigado). Asistimos a audiencias orales, radicamos demandas de restitución de inmueble arrendado, pertenencias, ejecuciones de pagarés y demandas de responsabilidad civil extracontractual y contractual.'
+        },
+        {
+          pregunta: '¿Cómo puedo agendar una consulta jurídica si me encuentro en Envigado?',
+          respuesta: 'Puede contactarnos directamente por WhatsApp al +57 315 809 0334 o vía telefónica para agendar su consulta preliminar. Ofrecemos dos alternativas: atención virtual de alta definición para revisión inmediata de escrituras, contratos o sentencias; o cita presencial concertada en nuestra sede principal metropolitana en Bello (Calle 51 # 50-70) o en salas de reunión acordadas en Envigado y el sur del Valle de Aburrá.'
+        },
+        {
+          pregunta: '¿Cuánto demora un divorcio o sucesión notarial en Envigado?',
+          respuesta: 'Cuando existe acuerdo total entre las partes e inventario y avalúo consensuado de bienes, un divorcio notarial en Envigado toma entre 8 y 15 días hábiles hasta la suscripción de la escritura pública. Para una sucesión notarial, el trámite suele tomar entre 30 y 45 días hábiles, sujeto a los paz y salvos de impuesto predial municipal y a la aprobación de la Dirección de Impuestos y Aduanas Nacionales (DIAN).'
+        },
+        {
+          pregunta: '¿Asesoran a propietarios en contratos de arrendamiento en Envigado?',
+          respuesta: 'Sí. Asesoramos integralmente a propietarios y arrendadores residenciales y comerciales en Envigado: blindamos contratos de arrendamiento bajo la Ley 820 de 2003, gestionamos constitución de pólizas con afianzadoras, estructuramos actas de terminación de mutuo acuerdo y adelantamos procesos judiciales abreviados de restitución de inmueble arrendado ante el incumplimiento en el pago de cánones o servicios públicos.'
+        }
+      ],
+      schema: {
+        '@context': 'https://schema.org',
+        '@type': 'LegalService',
+        '@id': `${DOMAIN}/abogados-envigado/#legalservice`,
+        'name': 'ABOGAR Grupo Jurídico - Abogados en Envigado',
+        'description': 'Firma de abogados especialistas en Envigado: derecho de familia, sucesiones notariales, divorcios, restitución de inmuebles en arriendo, demandas laborales y pensiones en el sur del Valle de Aburrá.',
+        'url': `${DOMAIN}/abogados-envigado/`,
+        'telephone': '+573158090334',
+        'priceRange': '$$',
+        'image': `${DOMAIN}/images/hero-justicia.webp`,
+        'address': {
+          '@type': 'PostalAddress',
+          'streetAddress': 'Calle 51 # 50-70, Oficina 200 (Atención directa en Envigado y Sur del Valle de Aburrá)',
+          'addressLocality': 'Envigado',
+          'addressRegion': 'Antioquia',
+          'postalCode': '055422',
+          'addressCountry': 'CO'
+        },
+        'geo': {
+          '@type': 'GeoCoordinates',
+          'latitude': 6.1685,
+          'longitude': -75.5869
+        },
+        'areaServed': [
+          { '@type': 'City', 'name': 'Envigado' },
+          { '@type': 'AdministrativeArea', 'name': 'El Dorado' },
+          { '@type': 'AdministrativeArea', 'name': 'Alcalá' },
+          { '@type': 'AdministrativeArea', 'name': 'La Magnolia' },
+          { '@type': 'AdministrativeArea', 'name': 'Las Orquídeas' },
+          { '@type': 'AdministrativeArea', 'name': 'Otraparte' },
+          { '@type': 'AdministrativeArea', 'name': 'Zuñiga' },
+          { '@type': 'AdministrativeArea', 'name': 'San Marcos' },
+          { '@type': 'City', 'name': 'Sabaneta' },
+          { '@type': 'City', 'name': 'Itagüí' },
+          { '@type': 'City', 'name': 'Medellín' }
+        ]
+      }
+    },
   ];
 
   // 5. Los 12 Servicios Individuales

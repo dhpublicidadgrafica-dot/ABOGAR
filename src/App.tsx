@@ -15,6 +15,7 @@ import { Contacto } from './pages/Contacto';
 import { AbogadosMedellin } from './pages/AbogadosMedellin';
 import { AbogadosItagui } from './pages/AbogadosItagui';
 import { AbogadosPoblado } from './pages/AbogadosPoblado';
+import { AbogadosEnvigado } from './pages/AbogadosEnvigado';
 import { NotFound } from './pages/NotFound';
 import { Legales } from './pages/Legales';
 
@@ -53,6 +54,10 @@ export function AppContent() {
             {/* Landing Local SEO: Abogados en El Poblado */}
             <Route path="/abogados-poblado" element={<AbogadosPoblado />} />
             <Route path="/abogados-poblado/" element={<AbogadosPoblado />} />
+
+            {/* Landing Local SEO: Abogados en Envigado */}
+            <Route path="/abogados-envigado" element={<AbogadosEnvigado />} />
+            <Route path="/abogados-envigado/" element={<AbogadosEnvigado />} />
 
             {/* Páginas Legales (No-indexadas) */}
             <Route path="/legales" element={<Legales />} />

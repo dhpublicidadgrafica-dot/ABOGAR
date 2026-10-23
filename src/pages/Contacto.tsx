@@ -214,14 +214,21 @@ export const Contacto: React.FC = () => {
                     >
                       abogados en El Poblado
                     </Link>{' '}
-                    (Milla de Oro), y especialistas en derecho laboral y culpa patronal en{' '}
+                    (Milla de Oro), especialistas en derecho laboral y culpa patronal en{' '}
                     <Link
                       to="/abogados-itagui/"
                       className="font-medium text-[#15297C] hover:text-[#0D1B54] underline decoration-[#FFE19E] decoration-2 underline-offset-2 transition-colors"
                     >
                       Itagüí
                     </Link>{' '}
-                    y el sur metropolitano (Envigado y Sabaneta).
+                    y representación en familia, sucesiones y civil con nuestros{' '}
+                    <Link
+                      to="/abogados-envigado/"
+                      className="font-medium text-[#15297C] hover:text-[#0D1B54] underline decoration-[#FFE19E] decoration-2 underline-offset-2 transition-colors"
+                    >
+                      abogados en Envigado
+                    </Link>
+                    .
                   </div>
                 </div>
 
