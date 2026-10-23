@@ -513,7 +513,12 @@ export const AbogadosMedellin: React.FC = () => {
                     <span>Tribunales y Juzgados</span>
                   </li>
                   <li className="flex items-center justify-between py-1 border-b border-slate-50">
-                    <span className="font-medium text-slate-800">El Poblado / Milla de Oro:</span>
+                    <Link
+                      to="/abogados-poblado/"
+                      className="text-[#15297C] hover:underline font-medium"
+                    >
+                      El Poblado (Milla de Oro)
+                    </Link>
                     <span>Asesoría Corporativa</span>
                   </li>
                   <li className="flex items-center justify-between py-1 border-b border-slate-50">

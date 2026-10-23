@@ -200,14 +200,28 @@ export const Contacto: React.FC = () => {
                   {/* Cobertura metropolitana con enlazado contextual sutil */}
                   <div className="pt-2 text-xs text-slate-600 leading-relaxed bg-slate-50 p-3.5 rounded border border-slate-100">
                     <span className="font-semibold text-slate-800">Cobertura en el Valle de Aburrá:</span>{' '}
-                    Además de nuestra sede principal en Bello, gestionamos litigios y asesorías corporativas presenciales y virtuales a través de nuestros{' '}
+                    Además de nuestra sede principal en Bello, gestionamos litigios y asesorías corporativas presenciales y virtuales con nuestros{' '}
                     <Link
                       to="/abogados-medellin/"
                       className="font-medium text-[#15297C] hover:text-[#0D1B54] underline decoration-[#FFE19E] decoration-2 underline-offset-2 transition-colors"
                     >
                       abogados en Medellín
                     </Link>{' '}
-                    (La Alpujarra, El Poblado, Laureles), así como en Envigado, Itagüí y Sabaneta.
+                    (La Alpujarra, Laureles), consultoría societaria y de visas con nuestros{' '}
+                    <Link
+                      to="/abogados-poblado/"
+                      className="font-medium text-[#15297C] hover:text-[#0D1B54] underline decoration-[#FFE19E] decoration-2 underline-offset-2 transition-colors"
+                    >
+                      abogados en El Poblado
+                    </Link>{' '}
+                    (Milla de Oro), y especialistas en derecho laboral y culpa patronal en{' '}
+                    <Link
+                      to="/abogados-itagui/"
+                      className="font-medium text-[#15297C] hover:text-[#0D1B54] underline decoration-[#FFE19E] decoration-2 underline-offset-2 transition-colors"
+                    >
+                      Itagüí
+                    </Link>{' '}
+                    y el sur metropolitano (Envigado y Sabaneta).
                   </div>
                 </div>
 

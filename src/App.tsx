@@ -13,6 +13,8 @@ import { Servicios } from './pages/Servicios';
 import { ServiceDetail } from './pages/ServiceDetail';
 import { Contacto } from './pages/Contacto';
 import { AbogadosMedellin } from './pages/AbogadosMedellin';
+import { AbogadosItagui } from './pages/AbogadosItagui';
+import { AbogadosPoblado } from './pages/AbogadosPoblado';
 import { NotFound } from './pages/NotFound';
 import { Legales } from './pages/Legales';
 
@@ -43,6 +45,14 @@ export function AppContent() {
             {/* Landing Local SEO: Abogados en Medellín */}
             <Route path="/abogados-medellin" element={<AbogadosMedellin />} />
             <Route path="/abogados-medellin/" element={<AbogadosMedellin />} />
+
+            {/* Landing Local SEO: Abogados en Itagüí */}
+            <Route path="/abogados-itagui" element={<AbogadosItagui />} />
+            <Route path="/abogados-itagui/" element={<AbogadosItagui />} />
+
+            {/* Landing Local SEO: Abogados en El Poblado */}
+            <Route path="/abogados-poblado" element={<AbogadosPoblado />} />
+            <Route path="/abogados-poblado/" element={<AbogadosPoblado />} />
 
             {/* Páginas Legales (No-indexadas) */}
             <Route path="/legales" element={<Legales />} />
