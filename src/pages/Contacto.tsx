@@ -197,36 +197,36 @@ export const Contacto: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Cobertura metropolitana con enlazado contextual sutil */}
+                  {/* Cobertura metropolitana con enlazado directo por ciudad */}
                   <div className="pt-2 text-xs text-slate-600 leading-relaxed bg-slate-50 p-3.5 rounded border border-slate-100">
                     <span className="font-semibold text-slate-800">Cobertura en el Valle de Aburrá:</span>{' '}
-                    Además de nuestra sede principal en Bello, gestionamos litigios y asesorías corporativas presenciales y virtuales con nuestros{' '}
+                    Además de nuestra sede principal en Bello, contamos con abogados en{' '}
                     <Link
                       to="/abogados-medellin/"
                       className="font-medium text-[#15297C] hover:text-[#0D1B54] underline decoration-[#FFE19E] decoration-2 underline-offset-2 transition-colors"
                     >
-                      abogados en Medellín
-                    </Link>{' '}
-                    (La Alpujarra, Laureles), consultoría societaria y de visas con nuestros{' '}
+                      Medellín
+                    </Link>
+                    {', '}
                     <Link
                       to="/abogados-poblado/"
                       className="font-medium text-[#15297C] hover:text-[#0D1B54] underline decoration-[#FFE19E] decoration-2 underline-offset-2 transition-colors"
                     >
-                      abogados en El Poblado
-                    </Link>{' '}
-                    (Milla de Oro), especialistas en derecho laboral y culpa patronal en{' '}
+                      El Poblado
+                    </Link>
+                    {', '}
                     <Link
                       to="/abogados-itagui/"
                       className="font-medium text-[#15297C] hover:text-[#0D1B54] underline decoration-[#FFE19E] decoration-2 underline-offset-2 transition-colors"
                     >
                       Itagüí
-                    </Link>{' '}
-                    y representación en familia, sucesiones y civil con nuestros{' '}
+                    </Link>
+                    {' y '}
                     <Link
                       to="/abogados-envigado/"
                       className="font-medium text-[#15297C] hover:text-[#0D1B54] underline decoration-[#FFE19E] decoration-2 underline-offset-2 transition-colors"
                     >
-                      abogados en Envigado
+                      Envigado
                     </Link>
                     .
                   </div>
