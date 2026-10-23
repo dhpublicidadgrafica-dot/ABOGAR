@@ -502,44 +502,18 @@ export const AbogadosPoblado: React.FC = () => {
                 </div>
               </div>
 
-              {/* Tarjeta de Otras Zonas de Cobertura */}
+              {/* Tarjeta de Sede Principal */}
               <div className="bg-white p-6 rounded-lg border border-slate-200 shadow-xs">
                 <div className="flex items-center gap-2 pb-3 mb-3 border-b border-slate-100 text-slate-900">
                   <MapPin className="w-4 h-4 text-[#15297C]" />
                   <h4 className="font-serif text-base font-bold text-slate-900">
-                    Zonas de Cobertura Metropolitana
+                    Sede Principal
                   </h4>
                 </div>
                 <ul className="space-y-2 text-xs sm:text-sm text-slate-600">
-                  <li className="flex items-center justify-between py-1 border-b border-slate-50">
+                  <li className="flex items-center justify-between py-1">
                     <span className="font-medium text-slate-800">Sede Principal:</span>
                     <span className="text-[#15297C] font-semibold">Bello (Of. 200)</span>
-                  </li>
-                  <li className="flex items-center justify-between py-1 border-b border-slate-50">
-                    <Link
-                      to="/abogados-medellin/"
-                      className="text-[#15297C] hover:underline font-medium"
-                    >
-                      Medellín (La Alpujarra)
-                    </Link>
-                    <span>Tribunales y Juzgados</span>
-                  </li>
-                  <li className="flex items-center justify-between py-1 border-b border-slate-50">
-                    <span className="font-medium text-[#15297C] font-semibold">El Poblado (Actual):</span>
-                    <span>Milla de Oro y Visas</span>
-                  </li>
-                  <li className="flex items-center justify-between py-1 border-b border-slate-50">
-                    <Link
-                      to="/abogados-itagui/"
-                      className="text-[#15297C] hover:underline font-medium"
-                    >
-                      Itagüí (Aburrá Sur)
-                    </Link>
-                    <span>Laboral y Culpa Patronal</span>
-                  </li>
-                  <li className="flex items-center justify-between py-1">
-                    <span className="font-medium text-slate-800">Envigado y Sabaneta:</span>
-                    <span>Área Metropolitana</span>
                   </li>
                 </ul>
               </div>
