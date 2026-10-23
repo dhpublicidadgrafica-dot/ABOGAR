@@ -151,7 +151,7 @@ export const AbogadosItagui: React.FC = () => {
     'url': 'https://abogargroup.com/abogados-itagui/',
     'telephone': '+573158090334',
     'priceRange': '$$',
-    'image': 'https://abogargroup.com/images/hero-justicia.jpg',
+    'image': 'https://abogargroup.com/images/hero-justicia.webp',
     'address': {
       '@type': 'PostalAddress',
       'streetAddress': 'Calle 51 # 50-70, Oficina 200 (Atención directa para Itagüí y Aburrá Sur)',

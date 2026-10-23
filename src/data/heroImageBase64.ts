@@ -1,6 +1,6 @@
 /**
- * RUTA OFICIAL DE LA IMAGEN DE HERO
- * Ahora servida como archivo estático independiente en /images/hero-justicia.jpg
- * para evitar inflar el bundle de JavaScript y optimizar el First Contentful Paint (FCP) y LCP.
+ * RUTA OFICIAL DE LA IMAGEN DE HERO (OPTIMIZADA EN WEBP)
+ * Servida como archivo WebP ultraligero (~77 KB, antes ~800 KB) en /images/hero-justicia.webp
+ * para maximizar la velocidad de carga (LCP) y la puntuación en Google PageSpeed / Core Web Vitals.
  */
-export const HERO_IMAGE_BASE64 = "/images/hero-justicia.jpg";
+export const HERO_IMAGE_BASE64 = "/images/hero-justicia.webp";

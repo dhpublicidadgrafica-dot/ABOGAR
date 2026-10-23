@@ -155,7 +155,7 @@ export const AbogadosPoblado: React.FC = () => {
     'url': 'https://abogargroup.com/abogados-poblado/',
     'telephone': '+573158090334',
     'priceRange': '$$$',
-    'image': 'https://abogargroup.com/images/hero-justicia.jpg',
+    'image': 'https://abogargroup.com/images/hero-justicia.webp',
     'address': {
       '@type': 'PostalAddress',
       'streetAddress': 'Cra. 43A (Milla de Oro) y Calle 51 # 50-70 (Atención ejecutiva en El Poblado y Valle de Aburrá)',

@@ -98,7 +98,7 @@ function generatePagesList(): PageMeta[] {
       description: 'Firma de abogados en Medellín especializada en litigio ante La Alpujarra, derecho laboral, comercial, familia y penal. Consulta hoy tu caso con expertos.',
       canonical: `${DOMAIN}/abogados-medellin/`,
       ogType: 'website',
-      ogImage: `${DOMAIN}/images/hero-justicia.jpg`,
+      ogImage: `${DOMAIN}/images/hero-justicia.webp`,
       breadcrumbs: [
         { name: 'Inicio', item: `${DOMAIN}/` },
         { name: 'Zonas de Cobertura', item: `${DOMAIN}/contacto/` },
@@ -135,7 +135,7 @@ function generatePagesList(): PageMeta[] {
         'url': `${DOMAIN}/abogados-medellin/`,
         'telephone': '+573158090334',
         'priceRange': '$$',
-        'image': `${DOMAIN}/images/hero-justicia.jpg`,
+        'image': `${DOMAIN}/images/hero-justicia.webp`,
         'address': {
           '@type': 'PostalAddress',
           'streetAddress': 'Calle 51 # 50-70, Oficina 200 (Cobertura directa en Medellín y La Alpujarra)',
@@ -168,7 +168,7 @@ function generatePagesList(): PageMeta[] {
       description: 'Abogados especialistas en Itagüí: defensas laborales, culpa patronal por accidentes de trabajo, cobro comercial y contratos. ¡Consulta tu caso hoy!',
       canonical: `${DOMAIN}/abogados-itagui/`,
       ogType: 'website',
-      ogImage: `${DOMAIN}/images/hero-justicia.jpg`,
+      ogImage: `${DOMAIN}/images/hero-justicia.webp`,
       breadcrumbs: [
         { name: 'Inicio', item: `${DOMAIN}/` },
         { name: 'Zonas de Cobertura', item: `${DOMAIN}/contacto/` },
@@ -205,7 +205,7 @@ function generatePagesList(): PageMeta[] {
         'url': `${DOMAIN}/abogados-itagui/`,
         'telephone': '+573158090334',
         'priceRange': '$$',
-        'image': `${DOMAIN}/images/hero-justicia.jpg`,
+        'image': `${DOMAIN}/images/hero-justicia.webp`,
         'address': {
           '@type': 'PostalAddress',
           'streetAddress': 'Calle 51 # 50-70, Oficina 200 (Atención directa para Itagüí y Aburrá Sur)',
@@ -239,7 +239,7 @@ function generatePagesList(): PageMeta[] {
       description: 'Servicios jurídicos estratégicos en El Poblado, Medellín: derecho corporativo, visas, litigio civil y familia. Asesoría de alto nivel. ¡Agenda tu cita!',
       canonical: `${DOMAIN}/abogados-poblado/`,
       ogType: 'website',
-      ogImage: `${DOMAIN}/images/hero-justicia.jpg`,
+      ogImage: `${DOMAIN}/images/hero-justicia.webp`,
       breadcrumbs: [
         { name: 'Inicio', item: `${DOMAIN}/` },
         { name: 'Zonas de Cobertura', item: `${DOMAIN}/contacto/` },
@@ -276,7 +276,7 @@ function generatePagesList(): PageMeta[] {
         'url': `${DOMAIN}/abogados-poblado/`,
         'telephone': '+573158090334',
         'priceRange': '$$$',
-        'image': `${DOMAIN}/images/hero-justicia.jpg`,
+        'image': `${DOMAIN}/images/hero-justicia.webp`,
         'address': {
           '@type': 'PostalAddress',
           'streetAddress': 'Cra. 43A (Milla de Oro) y Calle 51 # 50-70 (Atención ejecutiva en El Poblado y Valle de Aburrá)',
